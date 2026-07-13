@@ -3,59 +3,1212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Love Radio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="One Love Radio - Zimbabwe's Hottest Hits. Your home for great music and positive vibes. Listen live daily from 6pm SA Time.">
+    <meta name="theme-color" content="#E31937">
+    <title>One Love Radio | Zimbabwe's Hottest Hits</title>
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- PWA Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Custom Redesigned Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="sticky-header">
-        <div class="header-content">
-            <div class="live-banner">🔴 LIVE BROADCAST DAILY FROM 6PM SA TIME</div>
-            <header id="live-header">
-                <div class="header-container">
-                    <div class="logo-container">
-                        <img src="images/onelovelogo.jpeg" alt="One Love Radio Logo">
-                    </div>
-                    <div class="radio-info">
-                        <div class="station-name">One Love Radio</div>
-                        <div class="now-playing">Playing: <span id="track-title">Zimbabwe's Hottest Hits</span></div>
-                        <div class="listen-options">
-                            <button id="listenBtn"><i class="fas fa-play"></i> LISTEN LIVE NOW</button>
-                        </div>
-                        <div class="share-container">
-                            <button class="share-btn" id="shareBtn"><i class="fas fa-share-alt"></i> SHARE</button>
-                            <div class="share-options" id="shareOptions">
-                                <div class="share-option" data-type="facebook"><i class="fab fa-facebook"></i> Facebook</div>
-                                <div class="share-option" data-type="twitter"><i class="fab fa-twitter"></i> Twitter</div>
-                                <div class="share-option" data-type="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</div>
-                                <div class="share-option" data-type="copy"><i class="fas fa-copy"></i> Copy Link</div>
+    <!-- Skip to main content for accessibility -->
+    <a href="#content" class="skip-link">Skip to main content</a>
+
+    <!-- APP WRAPPER FOR REDESIGNED LAYOUT -->
+    <div class="app-wrapper">
+        
+        <!-- DESKTOP LEFT SIDEBAR NAVIGATION -->
+        <aside class="sidebar-nav" aria-label="Desktop sidebar navigation">
+            <a href="#home-page" class="sidebar-brand" onclick="navigateToPage('home'); return false;">
+                <img src="images/onelovelogo.jpeg" alt="One Love Radio Logo" class="sidebar-logo">
+                <span class="sidebar-title">One Love</span>
+            </a>
+            <nav class="sidebar-links" role="navigation">
+                <a href="#home-page" class="sidebar-link active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
+                <a href="#about-page" class="sidebar-link" data-page="about"><i class="fas fa-info-circle"></i><span>About Us</span></a>
+                <a href="#events-page" class="sidebar-link" data-page="events"><i class="fas fa-calendar-alt"></i><span>Events</span></a>
+                <a href="#past-events-page" class="sidebar-link" data-page="past-events"><i class="fas fa-history"></i><span>Past Events</span></a>
+                <a href="#stream-page" class="sidebar-link" data-page="stream"><i class="fas fa-headphones"></i><span>Listening Links</span></a>
+                <a href="#djs-page" class="sidebar-link" data-page="djs"><i class="fas fa-microphone"></i><span>Meet the DJs</span></a>
+                <a href="#fanbase-page" class="sidebar-link" data-page="fanbase"><i class="fas fa-users"></i><span>Fanbase</span></a>
+                <a href="#shop-page" class="sidebar-link" data-page="shop"><i class="fas fa-shopping-bag"></i><span>Shop</span></a>
+                <a href="#photos-page" class="sidebar-link" data-page="photos"><i class="fas fa-camera"></i><span>Fan Photos</span></a>
+                <a href="#contact-page" class="sidebar-link" data-page="contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <nav class="socials" aria-label="Sidebar social links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <div class="main-content-container">
+            
+            <!-- STICKY TOP LIVE BANNER -->
+            <div class="live-banner" role="status" aria-live="polite">
+                🔴 LIVE BROADCAST DAILY FROM 6PM SA TIME
+            </div>
+
+            <!-- DYNAMIC MAIN CONTENT VIEWPORTS -->
+            <main id="content" role="main" aria-label="Main content">
+                
+                <!-- HOME PAGE -->
+                <section id="home-page" class="page-section active" aria-labelledby="home-heading">
+                    <div class="hero">
+                        <div class="hero-content">
+                            <img src="images/onelovelogo.jpeg" alt="One Love Radio Logo" class="hero-logo">
+                            <h2 id="home-heading">Welcome to <span>One Love Radio</span></h2>
+                            <p>Your home for great music and positive vibes. Where passion meets purpose. Music continues playing seamlessly as you explore!</p>
+                            <div class="hero-cta">
+                                <a href="#" class="cta" id="listenBtnHero"><i class="fas fa-play"></i> Listen Live</a>
+                                <a href="#" class="cta" onclick="navigateToPage('about'); return false;">Discover More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="dj-player-section">
-                        <div class="dj-image">
-                            <img id="djMainImage" src="images/dj6.jpg" alt="Current DJ">
-                        </div>
-                        <div class="dj-name" id="djName">Music Interlude</div>
-                        <div class="player-controls">
-                            <div class="volume-control">
-                                <i class="fas fa-volume-down"></i>
-                                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7">
-                                <i class="fas fa-volume-up"></i>
+                    
+                    <!-- HERO SLIDESHOW CAROUSEL -->
+                    <div class="slideshow-container" role="region" aria-label="Image slideshow" aria-roledescription="carousel">
+                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 1 of 6">
+                            <img src="images/263hitradioevent.jpg" alt="263 Hit Radio Event">
+                            <div class="slide-label">
+                                <h3>263 Hit Radio Event</h3>
+                                <p>Celebrating culture, connection, and pure hits live.</p>
                             </div>
                         </div>
-                        <audio id="radioPlayer" src="https://vega.streamerr.co/listen/263_hit_radio_/radio.mp3" preload="none"></audio>
+                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 2 of 6">
+                            <img src="images/fusionband.jpg" alt="Band Fusion">
+                            <div class="slide-label">
+                                <h3>Band Fusion Live</h3>
+                                <p>Unforgettable live instrumental and vocal performances.</p>
+                            </div>
+                        </div>
+                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 3 of 6">
+                            <img src="images/streaming.jpg" alt="Live Streaming">
+                            <div class="slide-label">
+                                <h3>Streaming Live</h3>
+                                <p>Broadcasting state-of-the-art audio directly to your device.</p>
+                            </div>
+                        </div>
+                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 4 of 6">
+                            <img src="images/dj1.jpg" alt="DJ 1">
+                            <div class="slide-label">
+                                <h3>DJ Sessions</h3>
+                                <p>Feel the rhythm mixed by the finest sound selectors.</p>
+                            </div>
+                        </div>
+                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 5 of 6">
+                            <img src="images/dj5.jpg" alt="DJ 5">
+                            <div class="slide-label">
+                                <h3>On Air Vibes</h3>
+                                <p>Interactive radio shows that bring people together.</p>
+                            </div>
+                        </div>
+                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 6 of 6">
+                            <img src="images/dj3.jpg" alt="DJ 3">
+                            <div class="slide-label">
+                                <h3>Weekend Party</h3>
+                                <p>Your ultimate soundtrack for the weekend crossover.</p>
+                            </div>
+                        </div>
+                        <button class="prev" onclick="plusSlides(-1)" aria-label="Previous slide">&#10094;</button>
+                        <button class="next" onclick="plusSlides(1)" aria-label="Next slide">&#10095;</button>
                     </div>
-                </div>
-            </header>
+                    <div class="dot-container" role="tablist" aria-label="Slide navigation">
+                        <button class="dot active-dot" onclick="currentSlide(1)" role="tab" aria-label="Go to slide 1"></button>
+                        <button class="dot" onclick="currentSlide(2)" role="tab" aria-label="Go to slide 2"></button>
+                        <button class="dot" onclick="currentSlide(3)" role="tab" aria-label="Go to slide 3"></button>
+                        <button class="dot" onclick="currentSlide(4)" role="tab" aria-label="Go to slide 4"></button>
+                        <button class="dot" onclick="currentSlide(5)" role="tab" aria-label="Go to slide 5"></button>
+                        <button class="dot" onclick="currentSlide(6)" role="tab" aria-label="Go to slide 6"></button>
+                    </div>
+
+                    <!-- FEATURE BLOCKS GRID -->
+                    <div class="grid">
+                        <div class="block">
+                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1170&auto=format&fit=crop" alt="One Love Radio Top Hits">
+                            <div class="block-content">
+                                <h3>One Love Radio Top Hits</h3>
+                                <p>Submit your favorite tracks today and hear them mixed live on air!</p>
+                                <button class="cta" id="submitSongBtn">Submit Now</button>
+                                
+                                <div id="songForm" style="display:none; margin-top:20px; padding:20px; background:var(--bg-alt); border-radius:var(--radius-md); border:1px solid var(--border-dark);">
+                                    <form onsubmit="event.preventDefault(); submitSong();" style="display:grid; gap:12px;">
+                                        <div style="display:grid; gap:4px;">
+                                            <label for="songName">Song Name:</label>
+                                            <input type="text" id="songName" required>
+                                        </div>
+                                        <div style="display:grid; gap:4px;">
+                                            <label for="artistName">Artist Name:</label>
+                                            <input type="text" id="artistName" required>
+                                        </div>
+                                        <button type="submit" class="cta" style="width:100%;">Send to oneloveradio@gmail.com</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="block">
+                            <div class="event-slideshow">
+                                <img src="images/263hitradioevent.jpg" alt="Upcoming Event" class="event-slide active">
+                            </div>
+                            <div class="block-content">
+                                <h3>Upcoming Events</h3>
+                                <p>Check out our next big community event! Watch the video promos and get tickets early.</p>
+                                <button class="cta" onclick="navigateToPage('events'); return false;">Go to Events</button>
+                            </div>
+                        </div>
+
+                        <div class="block dj-slideshow-block">
+                            <div class="dj-slideshow">
+                                <img src="images/dj1.jpg" alt="DJ 1" class="dj-slide active">
+                                <img src="images/dj2.jpg" alt="DJ 2" class="dj-slide">
+                                <img src="images/dj3.jpg" alt="DJ 3" class="dj-slide">
+                                <img src="images/dj4.jpg" alt="DJ 4" class="dj-slide">
+                                <img src="images/dj5.jpg" alt="DJ 5" class="dj-slide">
+                                <img src="images/dj6.jpg" alt="DJ 6" class="dj-slide">
+                            </div>
+                            <div class="block-content">
+                                <h3>Meet the DJs</h3>
+                                <p>Get to know the passionate hosts and mixmasters behind the microphone.</p>
+                                <button class="cta" onclick="navigateToPage('djs'); return false;">View Profiles</button>
+                            </div>
+                        </div>
+
+                        <div class="block">
+                            <div class="fan-slideshow">
+                                <img src="fan-photos/fan1 (1).jpeg" alt="Fan 1" class="slide active">
+                                <img src="fan-photos/fan1 (2).jpeg" alt="Fan 2" class="slide">
+                                <img src="fan-photos/fan1 (3).jpeg" alt="Fan 3" class="slide">
+                                <img src="fan-photos/fan1 (4).jpeg" alt="Fan 4" class="slide">
+                                <img src="fan-photos/fan1 (5).jpeg" alt="Fan 5" class="slide">
+                                <img src="fan-photos/fan1 (6).jpeg" alt="Fan 6" class="slide">
+                                <img src="fan-photos/fan1 (7).jpeg" alt="Fan 7" class="slide">
+                                <img src="fan-photos/fan1 (8).jpeg" alt="Fan 8" class="slide">
+                                <img src="fan-photos/fan1 (9).jpeg" alt="Fan 9" class="slide">
+                                <img src="fan-photos/fan1 (10).jpeg" alt="Fan 10" class="slide">
+                                <img src="fan-photos/fan1 (11).jpeg" alt="Fan 11" class="slide">
+                                <img src="fan-photos/fan1 (12).jpeg" alt="Fan 12" class="slide">
+                            </div>
+                            <div class="block-content">
+                                <h3>Meet Our Fans</h3>
+                                <p>Explore our growing community gallery of beautiful people and music lovers.</p>
+                                <button class="cta" onclick="navigateToPage('fanbase'); return false;">Join Fanbase</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WHAT OUR FANS SAY -->
+                    <section class="fans-section" aria-labelledby="fans-heading">
+                        <h2 id="fans-heading" class="section-title">What Our Fans Say</h2>
+                        <div class="fans-grid" role="list">
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (1).jpeg" alt="Batsi Mahara" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Batsi Mahara</h3>
+                                    <p>"Mafaro Ngaawande ne One Love Radio!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (2).jpeg" alt="Fatima" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Fatima</h3>
+                                    <p>"One Love Radio is the place to be. Good Music, so much love!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (3).jpeg" alt="Manya" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Manya</h3>
+                                    <p>"I love the DJs on One Love Radio. Knowledgeable and entertaining hosts!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (4).jpeg" alt="Malikebo" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Malikebo</h3>
+                                    <p>"Impressed with the sound quality - really rich and full. One Love Radio!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (5).jpeg" alt="AJ" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>AJ</h3>
+                                    <p>"I love One Love Radio. Clear sound, friendly people!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (6).jpeg" alt="Innocent" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Innocent</h3>
+                                    <p>"Amazing to be a family member of One Love Radio. We learn a lot every day! ❤️"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (7).jpeg" alt="Jabinos Zingori" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Jabinos Zingori</h3>
+                                    <p>"One Love Radio - where love flows from the studios to the listeners!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (8).jpeg" alt="Tivvy" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Tivvy</h3>
+                                    <p>"One Love Radio is just amazing - try it!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (9).jpeg" alt="Nyari" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Nyari</h3>
+                                    <p>"One Love Radio is where real love is found. May God bless this station!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (10).jpeg" alt="Mr Goodman Tembo" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Mr Goodman Tembo</h3>
+                                    <p>"One Love Radio entertains, educates, and informs. My yard! 🎧"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (11).jpeg" alt="Lasty Jamu" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Lasty Jamu</h3>
+                                    <p>"One Love Radio represents the culture of Zimbabwe. 🇿🇼🎶🔥"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (12).jpeg" alt="Mrs Jays" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Mrs Jays</h3>
+                                    <p>"Every show is full of energy and passion. Keep up the excellent work!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (13).jpeg" alt="Maheavy" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Maheavy</h3>
+                                    <p>"One Love Radio - station of therapy, love, peace and availability!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (14).jpeg" alt="Mr Marufu" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Mr Marufu</h3>
+                                    <p>"I love the sound - on point!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (15).jpeg" alt="Maggie" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Maggie</h3>
+                                    <p>"Diverse range of music, clear sound and welcoming presenters."</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (16).jpeg" alt="Slay Studios" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Slay Studios</h3>
+                                    <p>"I love One Love Radio, it is in my veins! Tell a friend to tell a friend!"</p>
+                                </div>
+                            </article>
+                            <article class="fan-card" role="listitem">
+                                <img src="fan-photos/fan1 (17).jpeg" alt="Alex" loading="lazy">
+                                <div class="fan-info">
+                                    <h3>Alex</h3>
+                                    <p>"One Love Radio is the place to be 24/7."</p>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- INTERACTIVE day-by-day SCHEDULE VIEW -->
+                    <div class="glass-card">
+                        <h2 class="section-title">📅 Weekly Show Schedule</h2>
+                        <div class="schedule-tabs" role="tablist" aria-label="Weekly Schedule Days">
+                            <button class="schedule-tab-btn" role="tab" aria-selected="false" data-day="1">Mon</button>
+                            <button class="schedule-tab-btn" role="tab" aria-selected="false" data-day="2">Tue</button>
+                            <button class="schedule-tab-btn" role="tab" aria-selected="false" data-day="3">Wed</button>
+                            <button class="schedule-tab-btn" role="tab" aria-selected="false" data-day="4">Thu</button>
+                            <button class="schedule-tab-btn" role="tab" aria-selected="false" data-day="5">Fri</button>
+                            <button class="schedule-tab-btn" role="tab" aria-selected="false" data-day="6">Sat</button>
+                            <button class="schedule-tab-btn" role="tab" aria-selected="false" data-day="0">Sun</button>
+                        </div>
+
+                        <div class="schedule-tabs-content">
+                            <!-- MONDAY -->
+                            <div class="day-schedule" id="schedule-day-1">
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">00:00 - 19:00 SA</span>
+                                        <h3 class="schedule-show-name">Auto Play</h3>
+                                        <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj4.jpg" alt="Dj Greatman" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">19:00 - 22:00 SA</span>
+                                        <h3 class="schedule-show-name">Drive Time Radio</h3>
+                                        <p class="schedule-host">Dj Greatman</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj5.jpg" alt="Dj Warren" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">22:00 - 00:00 SA</span>
+                                        <h3 class="schedule-show-name">Monday Mellow Madness</h3>
+                                        <p class="schedule-host">Dj Warren</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TUESDAY -->
+                            <div class="day-schedule" id="schedule-day-2">
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">00:00 - 19:00 SA</span>
+                                        <h3 class="schedule-show-name">Auto Play</h3>
+                                        <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj2.jpg" alt="Dj Lassi" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">19:00 - 22:00 SA</span>
+                                        <h3 class="schedule-show-name">263 Connection</h3>
+                                        <p class="schedule-host">Dj Lassi</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj1.jpg" alt="Dj Black" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">22:00 - 00:00 SA</span>
+                                        <h3 class="schedule-show-name">Revivals Jams</h3>
+                                        <p class="schedule-host">Dj Black</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- WEDNESDAY -->
+                            <div class="day-schedule" id="schedule-day-3">
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">00:00 - 19:00 SA</span>
+                                        <h3 class="schedule-show-name">Auto Play</h3>
+                                        <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj2.jpg" alt="Bamdiki Munya" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">19:00 - 22:00 SA</span>
+                                        <h3 class="schedule-show-name">Midweek Party</h3>
+                                        <p class="schedule-host">Bamdiki Munya</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Guest Dj" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">22:00 - 00:00 SA</span>
+                                        <h3 class="schedule-show-name">Guest Dj</h3>
+                                        <p class="schedule-host">Guest Dj</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- THURSDAY -->
+                            <div class="day-schedule" id="schedule-day-4">
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">00:00 - 19:00 SA</span>
+                                        <h3 class="schedule-show-name">Auto Play</h3>
+                                        <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj2.jpg" alt="Dj Lassi" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">19:00 - 22:00 SA</span>
+                                        <h3 class="schedule-show-name">The Rhythm Connect</h3>
+                                        <p class="schedule-host">Dj Lassi</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj1.jpg" alt="Dj Black" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">22:00 - 00:00 SA</span>
+                                        <h3 class="schedule-show-name">Lovers Jams</h3>
+                                        <p class="schedule-host">Dj Black</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FRIDAY -->
+                            <div class="day-schedule" id="schedule-day-5">
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">00:00 - 19:00 SA</span>
+                                        <h3 class="schedule-show-name">Auto Play</h3>
+                                        <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj2.jpg" alt="Bamdiki Munya" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">19:00 - 22:00 SA</span>
+                                        <h3 class="schedule-show-name">The Weekend Crossover Show</h3>
+                                        <p class="schedule-host">Bamdiki Munya</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj5.jpg" alt="Dj Warren" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">22:00 - 00:00 SA</span>
+                                        <h3 class="schedule-show-name">Friday Night Life</h3>
+                                        <p class="schedule-host">Dj Warren</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SATURDAY -->
+                            <div class="day-schedule" id="schedule-day-6">
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">00:00 - 19:00 SA</span>
+                                        <h3 class="schedule-show-name">Auto Play</h3>
+                                        <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj5.jpg" alt="Dj Warren" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">19:00 - 22:00 SA</span>
+                                        <h3 class="schedule-show-name">SOS</h3>
+                                        <p class="schedule-host">Dj Warren</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj3.jpg" alt="Steve Ka Sithole" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">22:00 - 00:00 SA</span>
+                                        <h3 class="schedule-show-name">Bjams</h3>
+                                        <p class="schedule-host">Steve Ka Sithole</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SUNDAY -->
+                            <div class="day-schedule" id="schedule-day-0">
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">00:00 - 19:00 SA</span>
+                                        <h3 class="schedule-show-name">Auto Play</h3>
+                                        <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj3.jpg" alt="Pastor Ibanathi" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">19:00 - 20:30 SA</span>
+                                        <h3 class="schedule-show-name">Sunday Gospel</h3>
+                                        <p class="schedule-host">Pastor Ibanathi</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj3.jpg" alt="Steve Ka Sithole" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">20:30 - 22:00 SA</span>
+                                        <h3 class="schedule-show-name">Bjams</h3>
+                                        <p class="schedule-host">Steve Ka Sithole</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">22:00 - 00:00 SA</span>
+                                        <h3 class="schedule-show-name">Auto Play</h3>
+                                        <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WHATSAPP BANNER -->
+                    <div class="glass-card" style="text-align:center;">
+                        <h2 class="section-title">💬 Join Our WhatsApp Community</h2>
+                        <p style="color:var(--text-secondary); margin-bottom: 20px;">Connect with other listeners, request songs, and keep up with daily updates.</p>
+                        <a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+                    </div>
+
+                    <!-- REQUEST A SONG FORM -->
+                    <div class="glass-card">
+                        <h2 class="section-title">Request a Song</h2>
+                        <form id="whatsappForm" class="song-request-form" aria-label="Song request form">
+                            <div style="display:grid; gap:16px;">
+                                <div>
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" placeholder="Enter your name" required>
+                                </div>
+                                <div>
+                                    <label for="title">Song Title</label>
+                                    <input type="text" id="title" placeholder="Enter song title" required>
+                                </div>
+                                <div>
+                                    <label for="artist">Artist</label>
+                                    <input type="text" id="artist" placeholder="Enter artist name" required>
+                                </div>
+                                <button type="submit" class="cta"><i class="fab fa-whatsapp"></i> Send Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- ABOUT PAGE -->
+                <section id="about-page" class="page-section" aria-labelledby="about-heading">
+                    <div class="glass-card">
+                        <h2 id="about-heading" class="section-title">About Us</h2>
+                        <div class="about-content" style="display:grid; gap:20px;">
+                            <p>Hello and welcome to One Love Radio - the radio station of choice where people with like-minded ideas meet and mingle, where passion meets purpose. We bring you the best in music, entertainment, and education.</p>
+                            <p>Founded in November 2024, One Love Radio was created to bring together joy, love, and happiness to its fans. Whether you are tuning in for the music, the stories, or the vibes, you are part of a community that celebrates and connects everyone. Our live broadcasting starts from 6pm SA Time daily.</p>
+                            <p class="highlight-text" style="font-size:1.2rem; font-weight:700; color:var(--primary); font-family:'Playfair Display', serif; text-align:center; padding:20px; border-radius:var(--radius-md); background:var(--bg-alt);">Give us a try and let us know what you think. One Love Radio - a station of pure love and entertainment.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EVENTS PAGE -->
+                <section id="events-page" class="page-section" aria-labelledby="events-heading">
+                    <div class="event-promo glass-card">
+                        <h2 id="events-heading" class="section-title">Upcoming Events</h2>
+                        <p style="text-align:center; margin-bottom:30px; color:var(--text-secondary);">Get ready for the next big event! Watch the promo video below.</p>
+                    </div>
+                    
+                    <div class="events-showcase" style="margin-bottom:40px;">
+                        <div class="glass-card" style="padding:30px;">
+                            <h2 class="section-title">Live Events</h2>
+                            <p style="text-align:center; color:var(--text-secondary); margin-bottom:30px; max-width:700px; margin-left:auto; margin-right:auto;">The ultimate radio experience is coming. Join us for our live events where music, culture, and community come together for an unforgettable experience.</p>
+                            
+                            <div class="event-poster-container" style="max-width:500px; margin:0 auto 30px auto; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--border);">
+                                <img src="images/263hitradioevent.jpg" alt="Event Poster" class="event-poster-image" style="width:100%; height:auto; display:block;">
+                            </div>
+                            
+                            <p class="event-tagline" style="text-align:center; font-family:'Playfair Display', serif; font-size:1.3rem; font-weight:700; margin-bottom:30px; color:var(--primary);">One Love Radio - Where passion meets purpose.</p>
+                            
+                            <div class="event-video-container" style="max-width:640px; margin:0 auto 30px auto; border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-md);">
+                                <video controls playsinline preload="metadata" style="width:100%; display:block;"><source src="images/263connectioneventvid.mp4" type="video/mp4">Your browser does not support video.</video>
+                            </div>
+                            
+                            <div style="text-align:center;"><a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" target="_blank"><i class="fab fa-whatsapp"></i> Join Event Updates</a></div>
+                        </div>
+                    </div>
+
+                    <!-- EVENTS CALENDAR -->
+                    <div class="glass-card">
+                        <div class="calendar-header">
+                            <h2 class="section-title" style="margin-bottom:0;">Events Calendar</h2>
+                            <div class="month-nav">
+                                <button id="prevMonthBtn" aria-label="Previous month"><i class="fas fa-chevron-left"></i></button>
+                                <span id="calendarMonthLabel" style="font-size:1.1rem; font-weight:700;">Month Year</span>
+                                <button id="nextMonthBtn" aria-label="Next month"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        <div class="calendar-wrapper">
+                            <table class="calendar-table">
+                                <thead>
+                                    <tr>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="calendarTableBody">
+                                    <!-- Calendar content rendered via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- SUBMIT AN EVENT FORM -->
+                    <div class="glass-card event-form">
+                        <h3 class="section-title">Submit an Event</h3>
+                        <form id="eventWhatsappForm" autocomplete="off">
+                            <fieldset>
+                                <legend>Your Details</legend>
+                                <div style="display:grid; gap:16px; margin-bottom:16px;">
+                                    <div>
+                                        <label for="eventName">Name</label>
+                                        <input type="text" id="eventName" required>
+                                    </div>
+                                    <div>
+                                        <label for="eventEmail">Email</label>
+                                        <input type="email" id="eventEmail" required>
+                                    </div>
+                                    <div>
+                                        <label for="eventContact">Contact</label>
+                                        <input type="text" id="eventContact" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Event Info</legend>
+                                <div style="display:grid; gap:16px;">
+                                    <div>
+                                        <label for="eventTitle">Event Name</label>
+                                        <input type="text" id="eventTitle" required>
+                                    </div>
+                                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                                        <div>
+                                            <label for="eventFrom">From Date</label>
+                                            <input type="date" id="eventFrom" required>
+                                        </div>
+                                        <div>
+                                            <label for="eventTo">To Date</label>
+                                            <input type="date" id="eventTo" required>
+                                        </div>
+                                    </div>
+                                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                                        <div>
+                                            <label for="eventStart">Start Time</label>
+                                            <input type="time" id="eventStart" required>
+                                        </div>
+                                        <div>
+                                            <label for="eventEnd">End Time</label>
+                                            <input type="time" id="eventEnd" required>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="eventLocation">Location Name</label>
+                                        <input type="text" id="eventLocation" placeholder="e.g. Harare Gardens" required>
+                                    </div>
+                                    <div>
+                                        <label for="eventAddress">Street Address</label>
+                                        <input type="text" id="eventAddress" required>
+                                    </div>
+                                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+                                        <div>
+                                            <label for="eventCity">City</label>
+                                            <input type="text" id="eventCity" required>
+                                        </div>
+                                        <div>
+                                            <label for="eventProvince">Province</label>
+                                            <input type="text" id="eventProvince" required>
+                                        </div>
+                                        <div>
+                                            <label for="eventPrice">Price (Ticket)</label>
+                                            <input type="text" id="eventPrice" placeholder="e.g. Free / $10">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="eventEventContact">Organizer Contact Details</label>
+                                        <input type="text" id="eventEventContact">
+                                    </div>
+                                    <div>
+                                        <label for="eventDescription">Description (Max 600 chars)</label>
+                                        <textarea id="eventDescription" maxlength="600" placeholder="Tell us about the event details..." rows="4" required></textarea>
+                                    </div>
+                                    <div style="display:flex; align-items:center; gap:10px;">
+                                        <input type="checkbox" id="eventConsent" required style="width:auto; margin:0;">
+                                        <label for="eventConsent" style="margin:0; font-size:0.85rem;">I consent to my event data being collected and displayed.</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="cta">Submit Event</button>
+                        </form>
+                        
+                        <div class="disclaimer">
+                            <h4>NOTES:</h4>
+                            <ul>
+                                <li>Use the 24-hour clock format for times.</li>
+                                <li>Keep descriptions under 600 characters.</li>
+                            </ul>
+                            <h4>DISCLAIMER:</h4>
+                            <ul>
+                                <li>Submitted events can take up to 24 hours to appear.</li>
+                                <li>Events submitted after 2PM on Fridays will appear on Mondays.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- STREAM / LISTENING LINKS PAGE -->
+                <section id="stream-page" class="page-section" aria-labelledby="stream-heading">
+                    <div class="glass-card" style="padding:0; overflow:hidden;">
+                        <div class="stream-hero">
+                            <img src="images/streaming.jpg" alt="Streaming Radio">
+                            <div class="hero-overlay">
+                                <h1 id="stream-heading">Multiple Ways To Tune In</h1>
+                                <p>Choose your preferred stream link or platform below</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card">
+                        <h2 class="section-title">Primary Streams</h2>
+                        <div class="stream-grid">
+                            <div class="stream-card highlight">
+                                <div class="stream-icon"><i class="fas fa-star"></i></div>
+                                <h3>Main Stream</h3>
+                                <p>Our flagship high-quality direct audio stream.</p>
+                                <a href="https://altair.streamerr.co/public/263hitradio" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Listen Now</a>
+                            </div>
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-globe"></i></div>
+                                <h3>Web Player</h3>
+                                <p>Stream directly inside your browser player.</p>
+                                <a href="https://vega.streamerr.co/stationsite/263_hit_radio_" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Open Player</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card">
+                        <h2 class="section-title">Radio Directories</h2>
+                        <div class="stream-grid">
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-broadcast-tower"></i></div>
+                                <h3>TheOneStopRadio</h3>
+                                <p>Featured on a popular global radio index.</p>
+                                <a href="https://theonestopradio.com/radio/zw-263-hit-radio" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visit Platform</a>
+                            </div>
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-wifi"></i></div>
+                                <h3>Radioline</h3>
+                                <p>Tuned via international online directories.</p>
+                                <a href="https://www.radioline.co/en/radios/263_hit_radio" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visit Platform</a>
+                            </div>
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-globe"></i></div>
+                                <h3>LiveOnlineRadio</h3>
+                                <p>Discoverable via global directory catalog.</p>
+                                <a href="https://liveonlineradio.net/es/263-hit-radio" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visit Platform</a>
+                            </div>
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-music"></i></div>
+                                <h3>LiveRadio.ie</h3>
+                                <p>Streaming directory based in Ireland.</p>
+                                <a href="https://www.liveradio.ie/stations/263-hit-radio" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visit Platform</a>
+                            </div>
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-radio"></i></div>
+                                <h3>OnlineRadioBox</h3>
+                                <p>Popular mobile streaming application & site.</p>
+                                <a href="https://onlineradiobox.com/uk/263hit/" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visit Platform</a>
+                            </div>
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-spinner"></i></div>
+                                <h3>RadioSpinner</h3>
+                                <p>Global radio portal and network explorer.</p>
+                                <a href="https://radiospinner.com/gb/263-hit-radio-49663/" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Visit Platform</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MEET THE DJs PAGE -->
+                <section id="djs-page" class="page-section" aria-labelledby="djs-heading">
+                    <div class="glass-card">
+                        <h2 id="djs-heading" class="section-title">Meet Our DJs</h2>
+                        
+                        <!-- PRIME TIME CREW -->
+                        <div class="dj-category-header"><i class="fas fa-star"></i> Prime Time Crew</div>
+                        <div class="dj-grid">
+                            <div class="dj-card">
+                                <div class="dj-image-container"><img src="images/dj4.jpg" alt="Dj Greatman"></div>
+                                <div class="dj-info">
+                                    <h3>Dj Greatman</h3>
+                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Monday 19:00–22:00 SA</div>
+                                    <p>Bringing the energy on Drive Time Radio! Great tunes, great vibes, and the perfect soundtrack for your evening commute.</p>
+                                    <div class="dj-show">"Drive Time Radio"</div>
+                                </div>
+                            </div>
+                            <div class="dj-card">
+                                <div class="dj-image-container"><img src="images/dj2.jpg" alt="Bamdiki Munya"></div>
+                                <div class="dj-info">
+                                    <h3>Bamdiki Munya</h3>
+                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Wed &amp; Fri 19:00–22:00 SA</div>
+                                    <p>The people's DJ specializing in urban grooves and classic Zimbabwean hits. Hosts the Midweek Party and Weekend Crossover Show.</p>
+                                    <div class="dj-show">"Midweek Party &amp; Crossover Show"</div>
+                                </div>
+                            </div>
+                            <div class="dj-card">
+                                <div class="dj-image-container"><img src="images/dj2.jpg" alt="Dj Lassi"></div>
+                                <div class="dj-info">
+                                    <h3>Dj Lassi</h3>
+                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Tue &amp; Thu 19:00–22:00 SA</div>
+                                    <p>International grooves specialist bringing you the best global sounds. Master of world music fusion and cross-cultural beats.</p>
+                                    <div class="dj-show">"263 Connection &amp; Rhythm Connect"</div>
+                                </div>
+                            </div>
+                            <div class="dj-card">
+                                <div class="dj-image-container"><img src="images/dj1.jpg" alt="Dj Black"></div>
+                                <div class="dj-info">
+                                    <h3>Dj Black</h3>
+                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Tue &amp; Thu 22:00–00:00 SA</div>
+                                    <p>Spinning the best revival jams and lovers' specials. Bringing soul, rhythm, and late-night vibes to the airwaves.</p>
+                                    <div class="dj-show">"Revivals Jams &amp; Lovers Jams"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WEEKEND WARRIORS -->
+                        <div class="dj-category-header"><i class="fas fa-music"></i> Weekend Warriors</div>
+                        <div class="dj-grid">
+                            <div class="dj-card">
+                                <div class="dj-image-container"><img src="images/dj5.jpg" alt="Dj Warren"></div>
+                                <div class="dj-info">
+                                    <h3>Dj Warren</h3>
+                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Mon, Fri 22:00 &amp; Sat 19:00 SA</div>
+                                    <p>The young gun bringing fresh energy and the latest chart-toppers. From Monday Mellow Madness to Friday Night Life and Saturday SOS.</p>
+                                    <div class="dj-show">"Monday Madness, Friday Night Life &amp; SOS"</div>
+                                </div>
+                            </div>
+                            <div class="dj-card">
+                                <div class="dj-image-container"><img src="images/dj3.jpg" alt="Steve Ka Sithole"></div>
+                                <div class="dj-info">
+                                    <h3>Steve Ka Sithole</h3>
+                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Sat 22:00 &amp; Sun 20:30 SA</div>
+                                    <p>Afrofusion specialist and the master of Bjams. Blending contemporary African beats with global sounds for the perfect weekend wind-down.</p>
+                                    <div class="dj-show">"Bjams"</div>
+                                </div>
+                            </div>
+                            <div class="dj-card">
+                                <div class="dj-image-container"><img src="images/dj3.jpg" alt="Pastor Ibanathi"></div>
+                                <div class="dj-info">
+                                    <h3>Pastor Ibanathi</h3>
+                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Sunday 19:00–20:30 SA</div>
+                                    <p>Bringing spiritual nourishment and gospel music to end your weekend on a high note. Sunday Gospel with Pastor Ibanathi.</p>
+                                    <div class="dj-show">"Sunday Gospel"</div>
+                                </div>
+                            </div>
+                            <div class="dj-card">
+                                <div class="dj-image-container"><img src="images/dj6.jpg" alt="Music Interlude"></div>
+                                <div class="dj-info">
+                                    <h3>Music Interlude</h3>
+                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Daily 00:00–19:00 SA</div>
+                                    <p>Our intelligent playlist system keeps the music flowing 24/7 with perfect mixes of Zimbabwe's hottest hits.</p>
+                                    <div class="dj-show">"Auto Play — Non-Stop Hits"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STUDIO SUPPORT BADGE -->
+                        <div style="text-align:center; margin-top:40px; padding:20px; background:var(--bg-alt); border-radius:var(--radius-md); border:1px solid var(--border-dark);">
+                            <p style="color:var(--text-secondary); font-size:0.85rem; font-weight:600;"><i class="fas fa-headphones"></i> DJ Booth — Studio Support Available</p>
+                        </div>
+                    </div>
+
+                    <!-- JOIN TEAM -->
+                    <div class="glass-card" style="text-align:center;">
+                        <h2 class="section-title"><i class="fas fa-microphone-alt"></i> Want To Join Our Team?</h2>
+                        <h3 style="color:var(--primary); font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:20px;">DJ Applications Open!</h3>
+                        <p style="color:var(--text-secondary); max-width:600px; margin:0 auto 20px;">We're always looking for talented DJs and presenters to join the One Love Radio family. If you've got skills on the decks and a passion for Zimbabwean music, we want to hear from you!</p>
+                        <ul style="list-style:none; padding:0; margin:0 auto 25px; max-width:400px; text-align:left; display:inline-block;">
+                            <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Knowledge of Zimbabwean music genres</li>
+                            <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Ability to engage listeners</li>
+                            <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Professional attitude</li>
+                        </ul>
+                        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+                            <button class="cta" onclick="navigateToPage('contact'); return false;"><i class="fas fa-user-plus"></i> View Profiles</button>
+                            <a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" style="background:transparent; color:var(--primary); border: 2px solid var(--primary); box-shadow:none;" target="_blank"><i class="fab fa-whatsapp"></i> Apply Now</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FANBASE PAGE -->
+                <section id="fanbase-page" class="page-section" aria-labelledby="fanbase-heading">
+                    <div class="glass-card">
+                        <h2 id="fanbase-heading" class="section-title">One Love Fanbase</h2>
+                        <div class="photo-gallery">
+                            <div class="photo-item"><img src="fan-photos/fan1 (1).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (2).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (3).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (4).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (5).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (6).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (7).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (8).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (9).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (10).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (11).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (12).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (13).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (14).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (15).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (16).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (17).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card" style="text-align:center;">
+                        <h2 class="section-title">Submit Your Fan Photo</h2>
+                        <p style="color:var(--text-secondary); max-width:600px; margin:0 auto 20px;">Want to be featured in our community gallery? Send us your photos via WhatsApp!</p>
+                        <a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" target="_blank"><i class="fab fa-whatsapp"></i> Send Photo</a>
+                    </div>
+                </section>
+
+                <!-- SHOP PAGE -->
+                <section id="shop-page" class="page-section" aria-labelledby="shop-heading">
+                    <div class="glass-card">
+                        <h2 id="shop-heading" class="section-title">One Love Radio Shop</h2>
+                        <p style="text-align:center; color:var(--text-secondary); margin-bottom:30px;">Get your official One Love Radio merchandise! Secure payments via direct checkout options.</p>
+                        
+                        <div class="product-grid">
+                            <div class="product-card">
+                                <img class="product-image" src="images/record.jpg" alt="One Love Mug">
+                                <div class="product-info">
+                                    <h3>One Love Radio Mug</h3>
+                                    <p>Premium quality ceramic mug. Microwave and dishwasher safe.</p>
+                                    <div class="customization-options">
+                                        <label for="customTextMug">Customize (add your name):</label>
+                                        <input type="text" id="customTextMug" class="custom-text" placeholder="Your custom name (optional)">
+                                    </div>
+                                    <button class="add-to-cart-btn" onclick="addToCart('One Love Radio Mug', 10, this)">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <img class="product-image" src="images/event.jpg" alt="One Love Cap">
+                                <div class="product-info">
+                                    <h3>One Love Radio Cap</h3>
+                                    <p>Stylish curved-brim cap. Adjustable metal buckle back strap.</p>
+                                    <button class="add-to-cart-btn" onclick="addToCart('One Love Radio Cap', 15, this)">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <img class="product-image" src="images/vote.jpg" alt="One Love Bucket Hat">
+                                <div class="product-info">
+                                    <h3>One Love Radio Bucket Hat</h3>
+                                    <p>Comfortable all-season bucket hat. Perfect for festivals and outdoor events.</p>
+                                    <button class="add-to-cart-btn" onclick="addToCart('One Love Radio Bucket Hat', 15, this)">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <img class="product-image" src="images/support.jpg" alt="One Love Backpack">
+                                <div class="product-info">
+                                    <h3>One Love Radio Backpack</h3>
+                                    <p>Durable water-resistant design. Padded straps and spacious multi-pockets.</p>
+                                    <button class="add-to-cart-btn" onclick="addToCart('One Love Radio Backpack', 25, this)">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAN PHOTOS GALLERY PAGE -->
+                <section id="photos-page" class="page-section" aria-labelledby="photos-heading">
+                    <div class="glass-card">
+                        <h2 id="photos-heading" class="section-title">Fan Photos</h2>
+                        <p style="text-align:center; color:var(--text-secondary); margin-bottom:30px;">Our amazing community captured in moments of love, joy, and music.</p>
+                        <div class="photo-gallery">
+                            <div class="photo-item"><img src="fan-photos/fan1 (1).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (2).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (3).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (4).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (5).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (6).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (7).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (8).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (9).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (10).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (11).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (12).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (13).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (14).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (15).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (16).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                            <div class="photo-item"><img src="fan-photos/fan1 (17).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PAST EVENTS PAGE -->
+                <section id="past-events-page" class="page-section" aria-labelledby="past-events-heading">
+                    <div class="glass-card">
+                        <h2 id="past-events-heading" class="section-title">Past Events</h2>
+                        <div class="events-showcase">
+                            <div class="event-feature-card" style="display:grid; gap:16px; text-align:center;">
+                                <h3 style="font-family:'Playfair Display', serif; font-size:1.8rem; font-weight:700;">Band Fusion</h3>
+                                <p style="color:var(--text-secondary); max-width:600px; margin:0 auto;">An incredible live music experience that brought the community together.</p>
+                                <div class="event-poster-container" style="max-width:500px; margin:20px auto; border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-md);">
+                                    <img src="images/fusionband.jpg" alt="Band Fusion Event" style="width:100%; height:auto; display:block;">
+                                </div>
+                                <p class="event-tagline" style="font-style:italic; font-weight:600; color:var(--primary);">One Love Radio - Where passion meets purpose.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTACT PAGE & DJ APPLICATION -->
+                <section id="contact-page" class="page-section" aria-labelledby="contact-heading">
+                    <div class="glass-card">
+                        <h2 id="contact-heading" class="section-title">Contact Us</h2>
+                        <div class="stream-grid">
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fab fa-whatsapp"></i></div>
+                                <h3>WhatsApp Community</h3>
+                                <p>Join our official group for chats, reviews and requests.</p>
+                                <a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Join Group</a>
+                            </div>
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-comments"></i></div>
+                                <h3>Direct Chat</h3>
+                                <p>Connect directly with the studio manager via WhatsApp.</p>
+                                <a href="https://wa.me/447850930017" class="stream-button" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Direct Chat</a>
+                            </div>
+                            <div class="stream-card">
+                                <div class="stream-icon"><i class="fas fa-envelope"></i></div>
+                                <h3>Email Studio</h3>
+                                <p>Submit music submissions, proposals, or direct inquiries.</p>
+                                <a href="mailto:oneloveradio@gmail.com" class="stream-button"><i class="fas fa-envelope"></i> Send Email</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <h2 class="section-title">Apply to be a DJ</h2>
+                        <p style="text-align:center; color:var(--text-secondary); margin-bottom:30px;">Ready to showcase your talent on the decks of One Love Radio?</p>
+                        <div class="fanbase-form">
+                            <form id="djApplicationForm" onsubmit="submitDJApplication(event)">
+                                <div style="display:grid; gap:16px;">
+                                    <div>
+                                        <label for="djAppName">Full Name</label>
+                                        <input type="text" id="djAppName" required>
+                                    </div>
+                                    <div>
+                                        <label for="djAppEmail">Email Address</label>
+                                        <input type="email" id="djAppEmail" required>
+                                    </div>
+                                    <div>
+                                        <label for="djAppContact">Contact Number (WhatsApp enabled)</label>
+                                        <input type="text" id="djAppContact" required>
+                                    </div>
+                                    <div>
+                                        <label for="djAppExperience">Experience &amp; Mix Links</label>
+                                        <textarea id="djAppExperience" rows="4" placeholder="Tell us about your DJ experience and link to any previous mixes..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="cta">Submit Application</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- FOOTER -->
+            <footer role="contentinfo">
+                <p>&copy; 2024-2026 One Love Radio. All Rights Reserved.</p>
+                <p style="font-family:'Playfair Display', serif; font-style:italic; font-weight:600; color:var(--primary); margin-bottom: 20px;">Where passion meets purpose.</p>
+                <nav class="socials" aria-label="Footer social links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                </nav>
+            </footer>
         </div>
     </div>
+
+    <!-- FLOATING PERSISTENT GLASS STREAM PLAYER -->
+    <div class="floating-glass-player" id="floatingPlayer" aria-label="Live Stream Player">
+        <div class="player-header">
+            <div class="player-dj-image">
+                <img id="djMainImage" src="images/dj6.jpg" alt="Current DJ">
+                <div class="live-pulse"></div>
+            </div>
+            <div class="player-info">
+                <div class="player-status-badge"><span class="badge-dot"></span> LIVE NOW</div>
+                <p class="player-dj-name" id="djName">Music Interlude</p>
+                <div class="player-track-name">
+                    <span id="track-title">Zimbabwe's Hottest Hits</span>
+                </div>
+            </div>
+        </div>
+        <div class="player-controls-row">
+            <button id="listenBtn" class="player-play-btn" aria-label="Play live radio stream">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="player-volume">
+                <i class="fas fa-volume-down" style="color:var(--primary); font-size: 0.85rem;"></i>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7" aria-label="Volume">
+                <i class="fas fa-volume-up" style="color:var(--primary); font-size: 0.85rem;"></i>
+            </div>
+            <button class="player-share-btn" id="shareBtn" aria-expanded="false" aria-label="Share options">
+                <i class="fas fa-share-alt"></i>
+            </button>
+        </div>
+        <div class="share-options" id="shareOptions" role="menu" aria-label="Share Options">
+            <button class="share-option" data-type="facebook" role="menuitem"><i class="fab fa-facebook"></i> Facebook</button>
+            <button class="share-option" data-type="twitter" role="menuitem"><i class="fab fa-twitter"></i> Twitter</button>
+            <button class="share-option" data-type="whatsapp" role="menuitem"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+            <button class="share-option" data-type="copy" role="menuitem"><i class="fas fa-copy"></i> Copy Link</button>
+        </div>
+        <audio id="radioPlayer" src="https://vega.streamerr.co/listen/263_hit_radio_/radio.mp3" preload="none"></audio>
+    </div>
+
+    <!-- MOBILE BOTTOM APP BAR NAVIGATION -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile bottom navigation">
+        <a href="#home-page" class="mobile-nav-link active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#stream-page" class="mobile-nav-link" data-page="stream"><i class="fas fa-headphones"></i><span>Listen</span></a>
+        <a href="#djs-page" class="mobile-nav-link" data-page="djs"><i class="fas fa-microphone"></i><span>DJs</span></a>
+        <a href="#shop-page" class="mobile-nav-link" data-page="shop"><i class="fas fa-shopping-bag"></i><span>Shop</span></a>
+        <a href="#contact-page" class="mobile-nav-link" data-page="contact"><i class="fas fa-envelope"></i><span>Contact</span></a>
+    </nav>
+
+    <!-- SHOPPING CART BANNER AND DRAWER MODALS -->
+    <div id="cart-banner" onclick="openCartModal()">🛒 View Cart (<span id="cart-count">0</span>) - <span id="cart-total">$0.00</span></div>
+    
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCartModal()" aria-label="Close cart">&times;</span>
+            <h2 style="color:var(--text); margin-bottom:20px; font-family:'Playfair Display', serif;">Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <div id="cart-total-display" style="font-weight:700; font-size:1.2rem; margin-bottom:20px; color:var(--text);">Total: $0.00</div>
+            <button class="checkout-btn" onclick="openCheckoutModal()">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCheckoutModal()" aria-label="Close checkout">&times;</span>
+            <h2 style="color:var(--text); margin-bottom:25px; text-align:center; font-family:'Playfair Display', serif;">Choose Checkout Method</h2>
+            <div class="checkout-option" onclick="checkoutEmail()">📧 Checkout via Email</div>
+            <div class="checkout-option" onclick="checkoutWhatsApp()">💬 Checkout via WhatsApp</div>
+        </div>
+    </div>
+
+    <!-- REDESIGNED APP JAVASCRIPT -->
     <script>
+    // ─── DJ SCHEDULE DATA ───
     const djSchedule = [
         [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[20,30],dj:"Pastor Ibanathi",show:"Sunday Gospel",img:"images/dj3.jpg"},{start:[20,30],end:[22,0],dj:"Steve Ka Sithole",show:"Bjams",img:"images/dj3.jpg"},{start:[22,0],end:[24,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"}],
         [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[22,0],dj:"Dj Greatman",show:"Drive Time Radio",img:"images/dj4.jpg"},{start:[22,0],end:[24,0],dj:"Dj Warren",show:"Monday Mellow Madness",img:"images/dj5.jpg"}],
@@ -66,6 +1219,7 @@
         [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[22,0],dj:"Dj Warren",show:"SOS",img:"images/dj5.jpg"},{start:[22,0],end:[24,0],dj:"Steve Ka Sithole",show:"Bjams",img:"images/dj3.jpg"}]
     ];
     const autoDjPhoto = "images/dj6.jpg";
+
     function getCurrentDJ() {
         const now = new Date(), day = now.getDay(), h = now.getHours(), m = now.getMinutes(), ct = h*60+m;
         if (!djSchedule[day]) return {dj:"Music Interlude",show:"Playing the best hits",img:autoDjPhoto};
@@ -75,431 +1229,49 @@
         }
         return {dj:"Music Interlude",show:"Auto Play",img:autoDjPhoto};
     }
+
     function updateDJImage() {
         const dj = getCurrentDJ(), img = document.getElementById('djMainImage'), dn = document.getElementById('djName');
-        if (img) {img.src=dj.img;img.alt=dj.dj;}
-        if (dn) dn.textContent=dj.dj;
+        if (img) { img.src = dj.img; img.alt = dj.dj; }
+        if (dn) dn.textContent = dj.dj;
     }
-    updateDJImage(); setInterval(updateDJImage, 5*60*1000);
-    </script>
-    <nav>
-        <a href="#" class="nav-link active" data-page="home">Home</a>
-        <a href="#" class="nav-link" data-page="about">About Us</a>
-        <a href="#" class="nav-link" data-page="events">Events</a>
-        <a href="#" class="nav-link" data-page="past-events">Past Events</a>
-        <a href="#" class="nav-link" data-page="stream">Listening Links</a>
-        <a href="#" class="nav-link" data-page="djs">Meet the DJs</a>
-        <a href="#" class="nav-link" data-page="fanbase">Fanbase</a>
-        <a href="#" class="nav-link" data-page="shop">Shop</a>
-        <a href="#" class="nav-link" data-page="photos">Fan Photos</a>
-        <a href="#" class="nav-link" data-page="contact">Contact</a>
-    </nav>
-    <main id="content">
-        <section id="home-page" class="page-section active">
-            <div class="hero"><h1>Welcome to <span>One Love Radio</span></h1><p>Your home for great music and positive vibes. Where passion meets purpose. Music continues playing as you browse!</p></div>
-            <div class="slideshow-container">
-                <div class="mySlides"><div class="slide-label">263 Hit Radio Event</div><img src="images/263hitradioevent.jpg" alt="263 Hit Radio Event"></div>
-                <div class="mySlides"><div class="slide-label">Band Fusion Live</div><img src="images/fusionband.jpg" alt="Band Fusion"></div>
-                <div class="mySlides"><div class="slide-label">Streaming Live</div><img src="images/streaming.jpg" alt="Live Streaming"></div>
-                <div class="mySlides"><div class="slide-label">DJ Sessions</div><img src="images/dj1.jpg" alt="DJ 1"></div>
-                <div class="mySlides"><div class="slide-label">On Air Vibes</div><img src="images/dj5.jpg" alt="DJ 5"></div>
-                <div class="mySlides"><div class="slide-label">Weekend Party</div><img src="images/dj3.jpg" alt="DJ 3"></div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <div class="dot-container"><span class="dot" onclick="currentSlide(1)"></span><span class="dot" onclick="currentSlide(2)"></span><span class="dot" onclick="currentSlide(3)"></span><span class="dot" onclick="currentSlide(4)"></span><span class="dot" onclick="currentSlide(5)"></span><span class="dot" onclick="currentSlide(6)"></span></div>
-            <div class="grid">
-                <div class="block">
-                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1170&auto=format&fit=crop" alt="One Love Radio Top Hits">
-                    <div class="block-content">
-                        <h3>One Love Radio Top Hits</h3>
-                        <p>Submit your favourite hits today and hear them on air!</p>
-                        <a href="#" class="cta" id="submitSongBtn">Submit Now</a>
-                        <div id="songForm" style="display:none; margin-top:15px; padding:15px; background:var(--background-alt); border-radius:var(--radius-md); border:1px solid var(--border);">
-                            <form onsubmit="event.preventDefault(); submitSong();" style="display:grid; gap:10px;">
-                                <div style="display:grid;"><label style="color:var(--text-primary); font-weight:700; font-size:0.9rem;">Song Name:</label><input type="text" id="songName" required style="padding:10px; border-radius:var(--radius-sm); border:1px solid var(--border);"></div>
-                                <div style="display:grid;"><label style="color:var(--text-primary); font-weight:700; font-size:0.9rem;">Artist Name:</label><input type="text" id="artistName" required style="padding:10px; border-radius:var(--radius-sm); border:1px solid var(--border);"></div>
-                                <button type="submit" style="background:var(--primary); color:white; border:none; padding:12px; border-radius:var(--radius-pill); cursor:pointer; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Send to oneloveradio@gmail.com</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="block">
-                    <div class="event-slideshow"><img src="images/263hitradioevent.jpg" alt="Upcoming Event" class="event-slide active"></div>
-                    <div class="block-content">
-                        <h3>Upcoming Events</h3>
-                        <p>Check out our next big event! Watch the promo video and get involved.</p>
-                        <a href="#" class="cta" onclick="navigateToPage('events'); return false;">Go to Events</a>
-                    </div>
-                </div>
-                <script>
-                document.getElementById('submitSongBtn').addEventListener('click', function(e) { e.preventDefault(); var f = document.getElementById('songForm'); f.style.display = f.style.display === 'none' ? 'block' : 'none'; });
-                function submitSong() {
-                    var s = document.getElementById('songName').value, a = document.getElementById('artistName').value;
-                    window.location.href = 'mailto:oneloveradio@gmail.com?subject=' + encodeURIComponent('Song: ' + s) + '&body=' + encodeURIComponent('Song: ' + s + '\nArtist: ' + a + '\n\nI would like to hear this on One Love Radio!');
-                    document.getElementById('songForm').style.display = 'none';
-                    document.getElementById('songName').value = ''; document.getElementById('artistName').value = '';
-                }
-                </script>
-                <div class="block dj-slideshow-block">
-                    <div class="dj-slideshow">
-                        <img src="images/dj1.jpg" alt="DJ 1" class="dj-slide active">
-                        <img src="images/dj2.jpg" alt="DJ 2" class="dj-slide">
-                        <img src="images/dj3.jpg" alt="DJ 3" class="dj-slide">
-                        <img src="images/dj4.jpg" alt="DJ 4" class="dj-slide">
-                        <img src="images/dj5.jpg" alt="DJ 5" class="dj-slide">
-                        <img src="images/dj6.jpg" alt="DJ 6" class="dj-slide">
-                    </div>
-                    <div class="block-content">
-                        <h3>Meet the DJs</h3>
-                        <p>Get to know our radio hosts. Passionate, fun, and ready to rock your day.</p>
-                        <a href="#" class="cta" onclick="navigateToPage('djs'); return false;">View Profiles</a>
-                    </div>
-                </div>
-                <div class="block">
-                    <div class="fan-slideshow">
-                        <img src="fan-photos/fan1 (1).jpeg" alt="Fan 1" class="slide">
-                        <img src="fan-photos/fan1 (2).jpeg" alt="Fan 2" class="slide">
-                        <img src="fan-photos/fan1 (3).jpeg" alt="Fan 3" class="slide">
-                        <img src="fan-photos/fan1 (4).jpeg" alt="Fan 4" class="slide">
-                        <img src="fan-photos/fan1 (5).jpeg" alt="Fan 5" class="slide">
-                        <img src="fan-photos/fan1 (6).jpeg" alt="Fan 6" class="slide">
-                        <img src="fan-photos/fan1 (7).jpeg" alt="Fan 7" class="slide">
-                        <img src="fan-photos/fan1 (8).jpeg" alt="Fan 8" class="slide">
-                        <img src="fan-photos/fan1 (9).jpeg" alt="Fan 9" class="slide">
-                        <img src="fan-photos/fan1 (10).jpeg" alt="Fan 10" class="slide">
-                        <img src="fan-photos/fan1 (11).jpeg" alt="Fan 11" class="slide">
-                        <img src="fan-photos/fan1 (12).jpeg" alt="Fan 12" class="slide">
-                    </div>
-                    <div class="block-content">
-                        <h3>Meet Our Fans</h3>
-                        <p>Check out our amazing community of music lovers!</p>
-                        <a href="#" class="cta" onclick="navigateToPage('fanbase'); return false;">Join Fanbase</a>
-                    </div>
-                </div>
-            </div>
-            <section class="fans-section">
-                <h2 class="section-title">What Our Fans Say</h2>
-                <div class="fans-grid">
-                    <div class="fan-card"><img src="fan-photos/fan1 (1).jpeg" alt="Fan 1"><div class="fan-info"><h3>Batsi Mahara</h3><p>"Mafaro Ngaawande ne One Love Radio!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (2).jpeg" alt="Fan 2"><div class="fan-info"><h3>Fatima</h3><p>"One Love Radio is the place to be. Good Music, so much love!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (3).jpeg" alt="Fan 3"><div class="fan-info"><h3>Manya</h3><p>"I love the DJs on One Love Radio. Knowledgeable and entertaining hosts!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (4).jpeg" alt="Fan 4"><div class="fan-info"><h3>Malikebo</h3><p>"Impressed with the sound quality - really rich and full. One Love Radio!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (5).jpeg" alt="Fan 5"><div class="fan-info"><h3>AJ</h3><p>"I love One Love Radio. Clear sound, friendly people!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (6).jpeg" alt="Fan 6"><div class="fan-info"><h3>Innocent</h3><p>"Amazing to be a family member of One Love Radio. We learn a lot every day! ❤️"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (7).jpeg" alt="Fan 7"><div class="fan-info"><h3>Jabinos Zingori</h3><p>"One Love Radio - where love flows from the studios to the listeners!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (8).jpeg" alt="Fan 8"><div class="fan-info"><h3>Tivvy</h3><p>"One Love Radio is just amazing - try it!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (9).jpeg" alt="Fan 9"><div class="fan-info"><h3>Nyari</h3><p>"One Love Radio is where real love is found. May God bless this station!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (10).jpeg" alt="Fan 10"><div class="fan-info"><h3>Mr Goodman Tembo</h3><p>"One Love Radio entertains, educates, and informs. My yard! 🎧"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (11).jpeg" alt="Fan 11"><div class="fan-info"><h3>Lasty Jamu</h3><p>"One Love Radio represents the culture of Zimbabwe. 🇿🇼🎶🔥"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (12).jpeg" alt="Fan 12"><div class="fan-info"><h3>Mrs Jays</h3><p>"Every show is full of energy and passion. Keep up the excellent work!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (13).jpeg" alt="Fan 13"><div class="fan-info"><h3>Maheavy</h3><p>"One Love Radio - station of therapy, love, peace and availability!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (14).jpeg" alt="Fan 14"><div class="fan-info"><h3>Mr Marufu</h3><p>"I love the sound - on point!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (15).jpeg" alt="Fan 15"><div class="fan-info"><h3>Maggie</h3><p>"Diverse range of music, clear sound and welcoming presenters."</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (16).jpeg" alt="Fan 16"><div class="fan-info"><h3>Slay Studios</h3><p>"I love One Love Radio, it is in my veins! Tell a friend to tell a friend!"</p></div></div>
-                    <div class="fan-card"><img src="fan-photos/fan1 (17).jpeg" alt="Fan 17"><div class="fan-info"><h3>Alex</h3><p>"One Love Radio is the place to be 24/7."</p></div></div>
-                    
-                    
-                </div>
-            </section>
-            <div class="glass-card">
-                <h2 class="section-title">📅 Weekly Show Schedule</h2>
-                <div style="overflow-x:auto;">
-                <table style="width:100%; border-collapse:collapse; color:var(--text-primary);">
-                    <thead><tr style="background:var(--text-primary); color:white;">
-                        <th style="padding:14px; border:1px solid var(--border);">Day</th>
-                        <th style="padding:14px; border:1px solid var(--border);">Time (SA)</th>
-                        <th style="padding:14px; border:1px solid var(--border);">Show</th>
-                        <th style="padding:14px; border:1px solid var(--border);">Host</th>
-                    </tr></thead>
-                    <tbody>
-                        <tr><td rowspan="3" style="padding:12px; border:1px solid var(--border);">Monday</td><td style="padding:12px; border:1px solid var(--border);">00:00-19:00</td><td style="padding:12px; border:1px solid var(--border);">Auto Play</td><td style="padding:12px; border:1px solid var(--border);">Music Interlude</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">19:00-22:00</td><td style="padding:12px; border:1px solid var(--border);">Drive Time Radio</td><td style="padding:12px; border:1px solid var(--border);">Dj Greatman</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">22:00-00:00</td><td style="padding:12px; border:1px solid var(--border);">Monday Mellow Madness</td><td style="padding:12px; border:1px solid var(--border);">Dj Warren</td></tr>
-                        <tr><td rowspan="3" style="padding:12px; border:1px solid var(--border);">Tuesday</td><td style="padding:12px; border:1px solid var(--border);">00:00-19:00</td><td style="padding:12px; border:1px solid var(--border);">Auto Play</td><td style="padding:12px; border:1px solid var(--border);">Music Interlude</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">19:00-22:00</td><td style="padding:12px; border:1px solid var(--border);">263 Connection</td><td style="padding:12px; border:1px solid var(--border);">Dj Lassi</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">22:00-00:00</td><td style="padding:12px; border:1px solid var(--border);">Revivals Jams</td><td style="padding:12px; border:1px solid var(--border);">Dj Black</td></tr>
-                        <tr><td rowspan="3" style="padding:12px; border:1px solid var(--border);">Wednesday</td><td style="padding:12px; border:1px solid var(--border);">00:00-19:00</td><td style="padding:12px; border:1px solid var(--border);">Auto Play</td><td style="padding:12px; border:1px solid var(--border);">Music Interlude</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">19:00-22:00</td><td style="padding:12px; border:1px solid var(--border);">Midweek Party</td><td style="padding:12px; border:1px solid var(--border);">Bamdiki Munya</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">22:00-00:00</td><td style="padding:12px; border:1px solid var(--border);">Guest Dj</td><td style="padding:12px; border:1px solid var(--border);">Guest Dj</td></tr>
-                        <tr><td rowspan="3" style="padding:12px; border:1px solid var(--border);">Thursday</td><td style="padding:12px; border:1px solid var(--border);">00:00-19:00</td><td style="padding:12px; border:1px solid var(--border);">Auto Play</td><td style="padding:12px; border:1px solid var(--border);">Music Interlude</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">19:00-22:00</td><td style="padding:12px; border:1px solid var(--border);">The Rhythm Connect</td><td style="padding:12px; border:1px solid var(--border);">Dj Lassi</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">22:00-00:00</td><td style="padding:12px; border:1px solid var(--border);">Lovers Jams</td><td style="padding:12px; border:1px solid var(--border);">Dj Black</td></tr>
-                        <tr><td rowspan="3" style="padding:12px; border:1px solid var(--border);">Friday</td><td style="padding:12px; border:1px solid var(--border);">00:00-19:00</td><td style="padding:12px; border:1px solid var(--border);">Auto Play</td><td style="padding:12px; border:1px solid var(--border);">Music Interlude</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">19:00-22:00</td><td style="padding:12px; border:1px solid var(--border);">The Weekend Crossover Show</td><td style="padding:12px; border:1px solid var(--border);">Bamdiki Munya</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">22:00-00:00</td><td style="padding:12px; border:1px solid var(--border);">Friday Night Life</td><td style="padding:12px; border:1px solid var(--border);">Dj Warren</td></tr>
-                        <tr><td rowspan="3" style="padding:12px; border:1px solid var(--border);">Saturday</td><td style="padding:12px; border:1px solid var(--border);">00:00-19:00</td><td style="padding:12px; border:1px solid var(--border);">Auto Play</td><td style="padding:12px; border:1px solid var(--border);">Music Interlude</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">19:00-22:00</td><td style="padding:12px; border:1px solid var(--border);">SOS</td><td style="padding:12px; border:1px solid var(--border);">Dj Warren</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">22:00-00:00</td><td style="padding:12px; border:1px solid var(--border);">Bjams</td><td style="padding:12px; border:1px solid var(--border);">Steve Ka Sithole</td></tr>
-                        <tr><td rowspan="4" style="padding:12px; border:1px solid var(--border);">Sunday</td><td style="padding:12px; border:1px solid var(--border);">00:00-19:00</td><td style="padding:12px; border:1px solid var(--border);">Auto Play</td><td style="padding:12px; border:1px solid var(--border);">Music Interlude</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">19:00-20:30</td><td style="padding:12px; border:1px solid var(--border);">Sunday Gospel</td><td style="padding:12px; border:1px solid var(--border);">Pastor Ibanathi</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">20:30-22:00</td><td style="padding:12px; border:1px solid var(--border);">Bjams</td><td style="padding:12px; border:1px solid var(--border);">Steve Ka Sithole</td></tr>
-                        <tr><td style="padding:12px; border:1px solid var(--border);">22:00-00:00</td><td style="padding:12px; border:1px solid var(--border);">Auto Play</td><td style="padding:12px; border:1px solid var(--border);">Music Interlude</td></tr>
-                    </tbody>
-                </table>
-                </div>
-            </div>
-            <div class="glass-card" style="text-align:center;"><h2 class="section-title">💬 Join Our WhatsApp Community</h2><div style="margin-top:15px;"><a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a></div></div>
-            <div class="glass-card">
-                <h2 class="section-title">Request a Song</h2>
-                <form id="whatsappForm" class="song-request-form"><div class="song-request-fields">
-                    <input type="text" id="name" placeholder="Your Name" required />
-                    <input type="text" id="title" placeholder="Song Title" required />
-                    <input type="text" id="artist" placeholder="Artist" required />
-                    <button type="submit" class="cta song-request-btn">Send Request</button>
-                </div></form>
-            </div>
-        </section>
-        <section id="about-page" class="page-section">
-            <div class="glass-card"><h2 class="section-title">About Us</h2><div class="about-content">
-                <p>Hello and welcome to One Love Radio - the radio station of choice where people with like-minded ideas meet and mingle, where passion meets purpose. We bring you the best in music, entertainment, and education.</p>
-                <p>Founded in November 2024, One Love Radio was created to bring together joy, love, and happiness to its fans. Whether you are tuning in for the music, the stories, or the vibes, you are part of a community that celebrates and connects everyone. Our live broadcasting starts from 6pm SA Time daily.</p>
-                <p class="highlight-text">Give us a try and let us know what you think. One Love Radio - a station of pure love and entertainment.</p>
-            </div></div>
-        </section>
-        <section id="events-page" class="page-section">
-            <div class="event-promo glass-card"><h2 class="section-title">Upcoming Events</h2><p style="text-align:center; margin-bottom:30px; color:var(--text-secondary);">Get ready for the next big event! Watch the promo video below.</p></div>
-            <div class="events-showcase"><div class="event-feature-card"><div class="event-feature-body">
-                <h2 class="section-title">Live Events</h2>
-                <p style="text-align:center; color:var(--text-secondary); margin-bottom:20px;">The ultimate radio experience is coming. Join us for our live events where music, culture, and community come together for an unforgettable experience.</p>
-                <div class="event-poster-container"><img src="images/263hitradioevent.jpg" alt="Event Poster" class="event-poster-image"></div>
-                <p class="event-tagline">One Love Radio - Where passion meets purpose.</p>
-                <div class="event-video-container"><video controls playsinline preload="metadata"><source src="images/263connectioneventvid.mp4" type="video/mp4">Your browser does not support video.</video></div>
-                <div style="text-align:center; margin-top:20px;"><a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" target="_blank"><i class="fab fa-whatsapp"></i> Join Event Updates</a></div>
-            </div></div></div>
-            <div class="glass-card"><div class="calendar-header">
-                <h2 class="section-title" style="margin-bottom:0;">Events Calendar</h2>
-                <div class="month-nav"><button id="prevMonthBtn"><i class="fas fa-chevron-left"></i></button><span id="calendarMonthLabel" style="font-size:1.1rem; font-weight:700;">Month Year</span><button id="nextMonthBtn"><i class="fas fa-chevron-right"></i></button></div>
-            </div><div class="calendar-wrapper"><table class="calendar-table"><thead><tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></tr></thead><tbody id="calendarTableBody"></tbody></table></div></div>
-            <div class="event-form"><h3 class="section-title">Submit an Event</h3>
-                <form id="eventWhatsappForm" autocomplete="off">
-                    <fieldset><legend>Your Details</legend><label>Name: <input type="text" id="eventName" required/></label><label>Email: <input type="email" id="eventEmail" required/></label><label>Contact: <input type="text" id="eventContact" required/></label></fieldset>
-                    <fieldset><legend>Event Info</legend><label>Event Name: <input type="text" id="eventTitle" required/></label><label>From: <input type="date" id="eventFrom" required/></label><label>To: <input type="date" id="eventTo" required/></label><label>Start: <input type="time" id="eventStart" required/></label><label>End: <input type="time" id="eventEnd" required/></label><label>Location: <input type="text" id="eventLocation" required/></label><label>Address: <input type="text" id="eventAddress" required/></label><label>City: <input type="text" id="eventCity" required/></label><label>Province: <input type="text" id="eventProvince" required/></label><label>Price: <input type="text" id="eventPrice"/></label><label>Contact Details: <input type="text" id="eventEventContact"/></label><label>Description: <textarea id="eventDescription" maxlength="600" placeholder="Max 600 chars" required></textarea></label><label style="display:flex; align-items:center;"><input type="checkbox" id="eventConsent" required/><span style="margin-left:10px;">I consent to my data being collected.</span></label></fieldset>
-                    <button type="submit">Submit Event</button>
-                </form>
-                <div class="disclaimer"><h4>NOTES:</h4><ul><li>24-hour clock format.</li><li>Keep descriptions under 600 characters.</li></ul><h4>DISCLAIMER:</h4><ul><li>Events take up to 24 hours to appear.</li><li>Events after 2PM Friday appear Monday.</li></ul></div>
-            </div>
-        </section>
-        <section id="stream-page" class="page-section">
-            <div class="glass-card"><h2 class="section-title">Listen to One Love Radio</h2><div class="stream-hero"><img src="images/streaming.jpg" alt="Streaming"><div class="hero-overlay"><h1>Multiple Ways To Tune In</h1><p>Choose your preferred streaming method below</p></div></div></div>
-            <div class="glass-card"><h2 class="section-title">Primary Streams</h2><div class="stream-grid">
-                <div class="stream-card highlight"><div class="stream-icon"><i class="fas fa-star"></i></div><h3>Main Stream</h3><p>Our flagship high-quality stream</p><a href="https://altair.streamerr.co/public/263hitradio" class="stream-button" target="_blank"><i class="fas fa-play"></i> Listen Now</a></div>
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-globe"></i></div><h3>Web Player</h3><p>Direct browser streaming</p><a href="https://vega.streamerr.co/stationsite/263_hit_radio_" class="stream-button" target="_blank"><i class="fas fa-play"></i> Open Player</a></div>
-            </div></div>
-            <div class="glass-card"><h2 class="section-title">Radio Directories</h2><div class="stream-grid">
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-broadcast-tower"></i></div><h3>TheOneStopRadio</h3><p>Featured on popular radio directory</p><a href="https://theonestopradio.com/radio/zw-263-hit-radio" class="stream-button" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div>
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-wifi"></i></div><h3>Radioline</h3><p>International radio platform</p><a href="https://www.radioline.co/en/radios/263_hit_radio" class="stream-button" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div>
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-globe"></i></div><h3>LiveOnlineRadio</h3><p>Global radio directory</p><a href="https://liveonlineradio.net/es/263-hit-radio" class="stream-button" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div>
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-music"></i></div><h3>LiveRadio.ie</h3><p>Irish radio directory</p><a href="https://www.liveradio.ie/stations/263-hit-radio" class="stream-button" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div>
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-radio"></i></div><h3>OnlineRadioBox</h3><p>Popular streaming platform</p><a href="https://onlineradiobox.com/uk/263hit/" class="stream-button" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div>
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-spinner"></i></div><h3>RadioSpinner</h3><p>Global radio discovery</p><a href="https://radiospinner.com/gb/263-hit-radio-49663/" class="stream-button" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div>
-            </div></div>
-        </section>
-        <section id="djs-page" class="page-section">
-            <div class="glass-card"><h2 class="section-title">Meet Our DJs</h2>
-                
-                <!-- PRIME TIME CREW -->
-                <div class="dj-category-header"><i class="fas fa-star"></i> Prime Time Crew</div>
-                <div class="dj-grid">
-                    <div class="dj-card">
-                        <div class="dj-image-container"><img src="images/dj4.jpg" alt="Dj Greatman"></div>
-                        <div class="dj-info">
-                            <h3>Dj Greatman</h3>
-                            <div class="dj-schedule"><i class="fas fa-clock"></i> Monday 19:00–22:00 SA</div>
-                            <p>Bringing the energy on Drive Time Radio! Great tunes, great vibes, and the perfect soundtrack for your evening commute.</p>
-                            <div class="dj-show">"Drive Time Radio"</div>
-                        </div>
-                    </div>
-                    <div class="dj-card">
-                        <div class="dj-image-container"><img src="images/dj2.jpg" alt="Bamdiki Munya"></div>
-                        <div class="dj-info">
-                            <h3>Bamdiki Munya</h3>
-                            <div class="dj-schedule"><i class="fas fa-clock"></i> Wednesday 19:00–22:00 &amp; Friday 19:00–22:00 SA</div>
-                            <p>The people's DJ specializing in urban grooves and classic Zimbabwean hits. Hosts the Midweek Party and Weekend Crossover Show.</p>
-                            <div class="dj-show">"Midweek Party &amp; The Weekend Crossover Show"</div>
-                        </div>
-                    </div>
-                    <div class="dj-card">
-                        <div class="dj-image-container"><img src="images/dj2.jpg" alt="Dj Lassi"></div>
-                        <div class="dj-info">
-                            <h3>Dj Lassi</h3>
-                            <div class="dj-schedule"><i class="fas fa-clock"></i> Tuesday 19:00–22:00 &amp; Thursday 19:00–22:00 SA</div>
-                            <p>International grooves specialist bringing you the best global sounds. Master of world music fusion and cross-cultural beats.</p>
-                            <div class="dj-show">"263 Connection &amp; The Rhythm Connect"</div>
-                        </div>
-                    </div>
-                    <div class="dj-card">
-                        <div class="dj-image-container"><img src="images/dj1.jpg" alt="Dj Black"></div>
-                        <div class="dj-info">
-                            <h3>Dj Black</h3>
-                            <div class="dj-schedule"><i class="fas fa-clock"></i> Tuesday 22:00–00:00 &amp; Thursday 22:00–00:00 SA</div>
-                            <p>Spinning the best revival jams and lovers' specials. Bringing soul, rhythm, and late-night vibes to the airwaves.</p>
-                            <div class="dj-show">"Revivals Jams &amp; Lovers Jams"</div>
-                        </div>
-                    </div>
-                </div>
+    updateDJImage(); 
+    setInterval(updateDJImage, 5*60*1000);
 
-                <!-- WEEKEND WARRIORS -->
-                <div class="dj-category-header" style="margin-top:40px;"><i class="fas fa-music"></i> Weekend Warriors</div>
-                <div class="dj-grid">
-                    <div class="dj-card">
-                        <div class="dj-image-container"><img src="images/dj5.jpg" alt="Dj Warren"></div>
-                        <div class="dj-info">
-                            <h3>Dj Warren</h3>
-                            <div class="dj-schedule"><i class="fas fa-clock"></i> Monday 22:00–00:00, Friday 22:00–00:00 &amp; Saturday 19:00–22:00 SA</div>
-                            <p>The young gun bringing fresh energy and the latest chart-toppers. From Monday Mellow Madness to Friday Night Life and Saturday SOS.</p>
-                            <div class="dj-show">"Monday Mellow Madness, Friday Night Life &amp; SOS"</div>
-                        </div>
-                    </div>
-                    <div class="dj-card">
-                        <div class="dj-image-container"><img src="images/dj3.jpg" alt="Steve Ka Sithole"></div>
-                        <div class="dj-info">
-                            <h3>Steve Ka Sithole</h3>
-                            <div class="dj-schedule"><i class="fas fa-clock"></i> Saturday 22:00–00:00 &amp; Sunday 20:30–22:00 SA</div>
-                            <p>Afrofusion specialist and the master of Bjams. Blending contemporary African beats with global sounds for the perfect weekend wind-down.</p>
-                            <div class="dj-show">"Bjams"</div>
-                        </div>
-                    </div>
-                    <div class="dj-card">
-                        <div class="dj-image-container"><img src="images/dj3.jpg" alt="Pastor Ibanathi"></div>
-                        <div class="dj-info">
-                            <h3>Pastor Ibanathi</h3>
-                            <div class="dj-schedule"><i class="fas fa-clock"></i> Sunday 19:00–20:30 SA</div>
-                            <p>Bringing spiritual nourishment and gospel music to end your weekend on a high note. Sunday Gospel with Pastor Ibanathi.</p>
-                            <div class="dj-show">"Sunday Gospel"</div>
-                        </div>
-                    </div>
-                    <div class="dj-card">
-                        <div class="dj-image-container"><img src="images/dj6.jpg" alt="Music Interlude"></div>
-                        <div class="dj-info">
-                            <h3>Music Interlude</h3>
-                            <div class="dj-schedule"><i class="fas fa-clock"></i> Daily 00:00–19:00 SA</div>
-                            <p>Our intelligent playlist system keeps the music flowing 24/7 with perfect mixes of Zimbabwe's hottest hits.</p>
-                            <div class="dj-show">"Auto Play — Non-Stop Hits"</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DJ BOOTH SUPPORT -->
-                <div style="text-align:center; margin-top:40px; padding:20px; background:var(--glass); border-radius:var(--radius-md); border:1px solid var(--border);">
-                    <p style="color:var(--text-muted); font-size:0.85rem;"><i class="fas fa-headphones"></i> DJ Booth — Studio Support Available</p>
-                </div>
-            </div>
-
-            <div class="glass-card" style="text-align:center;">
-                <h2 class="section-title"><i class="fas fa-microphone-alt"></i> Want To Join Our Team?</h2>
-                <h3 style="color:var(--primary); font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:20px;">DJ Applications Open!</h3>
-                <p style="color:var(--text-secondary); max-width:600px; margin:0 auto 20px;">We're always looking for talented DJs and presenters to join the One Love Radio family. If you've got skills on the decks and a passion for Zimbabwean music, we want to hear from you!</p>
-                <ul style="list-style:none; padding:0; margin:0 auto 25px; max-width:400px; text-align:left; display:inline-block;">
-                    <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Knowledge of Zimbabwean music genres</li>
-                    <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Ability to engage listeners</li>
-                    <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Professional attitude</li>
-                </ul>
-                <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-                    <a href="#" class="cta" onclick="navigateToPage('contact'); return false;"><i class="fas fa-user-plus"></i> View Profiles</a>
-                    <a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" style="background:transparent; color:var(--primary); border-color:var(--primary);" target="_blank"><i class="fab fa-whatsapp"></i> Apply Now</a>
-                </div>
-            </div>
-        </section>
-        <section id="fanbase-page" class="page-section">
-            <div class="glass-card"><h2 class="section-title">One Love Fanbase</h2>
-                <div class="photo-gallery">
-                    <div class="photo-item"><img src="fan-photos/fan1 (1).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (2).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (3).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (4).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (5).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (6).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (7).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (8).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (9).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (10).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (11).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (12).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (13).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (14).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (15).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (16).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (17).jpeg" alt="Fan"><div class="photo-overlay">One Love Fan</div></div>
-                </div>
-            </div>
-            <div class="glass-card" style="text-align:center;"><h2 class="section-title">Submit Your Fan Photo</h2><p style="color:var(--text-secondary); max-width:600px; margin:0 auto 20px;">Want to be featured? Send us your photos!</p><a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" target="_blank"><i class="fab fa-whatsapp"></i> Send Photo</a></div>
-        </section>
-        <section id="shop-page" class="page-section">
-            <div class="glass-card"><h2 class="section-title">One Love Radio Shop</h2><p style="text-align:center; color:var(--text-secondary); margin-bottom:30px;">Get your official One Love Radio merchandise!</p>
-                <div class="product-grid">
-                    <div class="product-card"><img class="product-image" src="images/record.jpg" alt="One Love Mug"><div class="product-info"><h3>One Love Radio Mug</h3><p>Premium quality ceramic mug.</p><div class="customization-options"><label>Customize (add your name):</label><input type="text" class="custom-text" placeholder="Your custom text (optional)"></div><button class="add-to-cart-btn" onclick="addToCart('One Love Radio Mug',10,this)">Add to Cart</button></div></div>
-                    <div class="product-card"><img class="product-image" src="images/event.jpg" alt="One Love Cap"><div class="product-info"><h3>One Love Radio Cap</h3><p>Stylish cap. Adjustable fit.</p><button class="add-to-cart-btn" onclick="addToCart('One Love Radio Cap',15,this)">Add to Cart</button></div></div>
-                    <div class="product-card"><img class="product-image" src="images/vote.jpg" alt="One Love Bucket Hat"><div class="product-info"><h3>One Love Radio Bucket Hat</h3><p>Perfect for outdoor events.</p><button class="add-to-cart-btn" onclick="addToCart('One Love Radio Bucket Hat',15,this)">Add to Cart</button></div></div>
-                    <div class="product-card"><img class="product-image" src="images/support.jpg" alt="One Love Backpack"><div class="product-info"><h3>One Love Radio Backpack</h3><p>Durable and spacious design.</p><button class="add-to-cart-btn" onclick="addToCart('One Love Radio Backpack',25,this)">Add to Cart</button></div></div>
-                </div>
-            </div>
-        </section>
-        <section id="photos-page" class="page-section">
-            <div class="glass-card"><h2 class="section-title">Fan Photos</h2><p style="text-align:center; color:var(--text-secondary); margin-bottom:20px;">Our amazing community captured in moments of love and music.</p>
-                <div class="photo-gallery">
-                    <div class="photo-item"><img src="fan-photos/fan1 (1).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (2).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (3).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (4).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (5).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (6).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (7).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (8).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (9).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (10).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (11).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (12).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (13).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (14).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (15).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (16).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                    <div class="photo-item"><img src="fan-photos/fan1 (17).jpeg" alt="Fan"><div class="photo-overlay">One Love Family</div></div>
-                </div>
-            </div>
-        </section>
-        <section id="past-events-page" class="page-section">
-            <div class="glass-card"><h2 class="section-title">Past Events</h2><div class="events-showcase"><div class="event-feature-card"><div class="event-feature-body">
-                <h2 class="section-title">Band Fusion</h2>
-                <p style="text-align:center; color:var(--text-secondary);">An incredible live music experience that brought the community together.</p>
-                <div class="event-poster-container"><img src="images/fusionband.jpg" alt="Band Fusion Event" class="event-poster-image"></div>
-                <p class="event-tagline">One Love Radio - Where passion meets purpose.</p>
-            </div></div></div></div>
-        </section>
-        <section id="contact-page" class="page-section">
-            <div class="glass-card"><h2 class="section-title">Contact Us</h2><div class="stream-grid">
-                <div class="stream-card"><div class="stream-icon"><i class="fab fa-whatsapp"></i></div><h3>WhatsApp Community</h3><p>Join our official group</p><a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="stream-button" target="_blank"><i class="fab fa-whatsapp"></i> Join</a></div>
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-comments"></i></div><h3>Direct Chat</h3><p>Chat with us on WhatsApp</p><a href="https://wa.me/447850930017" class="stream-button" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a></div>
-                <div class="stream-card"><div class="stream-icon"><i class="fas fa-envelope"></i></div><h3>Email</h3><p>Send us a message</p><a href="mailto:oneloveradio@gmail.com" class="stream-button"><i class="fas fa-envelope"></i> Email</a></div>
-            </div></div>
-            <div class="glass-card"><h2 class="section-title">Apply to be a DJ</h2><p style="text-align:center; color:var(--text-secondary); margin-bottom:20px;">Ready to join the One Love Radio family?</p>
-                <div class="fanbase-form"><form id="djApplicationForm" onsubmit="submitDJApplication(event)">
-                    <label>Name: <input type="text" id="djAppName" required/></label>
-                    <label>Email: <input type="email" id="djAppEmail" required/></label>
-                    <label>Contact: <input type="text" id="djAppContact" required/></label>
-                    <label>Experience: <textarea id="djAppExperience" rows="4" placeholder="Tell us about your DJ experience..." required></textarea></label>
-                    <button type="submit">Submit Application</button>
-                </form></div>
-            </div>
-        </section>
-    </main>
-    <div id="cart-banner" onclick="openCartModal()">🛒 View Cart (<span id="cart-count">0</span> items) - <span id="cart-total">$0.00</span></div>
-    <div id="cart-modal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeCartModal()">&times;</span><h2 style="color:var(--text-primary); margin-bottom:20px;">Your Cart</h2><ul id="cart-items"></ul><div id="cart-total-display" style="font-weight:700; font-size:1.2rem; margin-bottom:20px; color:var(--text-primary);"></div><button class="checkout-btn" onclick="openCheckoutModal()">Proceed to Checkout</button></div></div>
-    <div id="checkout-modal" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeCheckoutModal()">&times;</span><h2 style="color:var(--text-primary); margin-bottom:20px; text-align:center;">Choose Checkout</h2><div class="checkout-option" onclick="checkoutEmail()">📧 Checkout via Email</div><div class="checkout-option" onclick="checkoutWhatsApp()">💬 Checkout via WhatsApp</div></div></div>
-    <footer><p>&copy; 2024-2026 One Love Radio. All Rights Reserved.</p><p>Where passion meets purpose.</p><div class="socials"><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a></div></footer>
-    <script>
+    // ─── NAVIGATOR & ROUTING SYSTEM ───
     function navigateToPage(page) {
         document.querySelectorAll('.page-section').forEach(function(s) { s.classList.remove('active'); });
         var target = document.getElementById(page + '-page');
         if (target) target.classList.add('active');
-        document.querySelectorAll('.nav-link').forEach(function(l) { l.classList.remove('active'); });
-        var navLink = document.querySelector('.nav-link[data-page="' + page + '"]');
-        if (navLink) navLink.classList.add('active');
+        
+        // Clear active classes from sidebar
+        document.querySelectorAll('.sidebar-link').forEach(function(l) { 
+            l.classList.remove('active'); 
+            l.removeAttribute('aria-current'); 
+        });
+        // Clear active classes from mobile bottom nav
+        document.querySelectorAll('.mobile-nav-link').forEach(function(l) { 
+            l.classList.remove('active'); 
+            l.removeAttribute('aria-current'); 
+        });
+
+        // Set active on matching links
+        var sideLink = document.querySelector('.sidebar-link[data-page="' + page + '"]');
+        var mobLink = document.querySelector('.mobile-nav-link[data-page="' + page + '"]');
+        if (sideLink) { sideLink.classList.add('active'); sideLink.setAttribute('aria-current', 'page'); }
+        if (mobLink) { mobLink.classList.add('active'); mobLink.setAttribute('aria-current', 'page'); }
+        
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    document.querySelectorAll('.nav-link').forEach(function(link) {
-        link.addEventListener('click', function(e) { e.preventDefault(); navigateToPage(this.dataset.page); });
+
+    document.querySelectorAll('.sidebar-link, .mobile-nav-link').forEach(function(link) {
+        link.addEventListener('click', function(e) { 
+            e.preventDefault(); 
+            navigateToPage(this.dataset.page); 
+        });
     });
+
+    // ─── SLIDESHOW CAROUSEL SYSTEM ───
     var slideIndex = 1;
     function plusSlides(n) {
         slideIndex += n;
@@ -509,45 +1281,81 @@
         showSlides();
     }
     function currentSlide(n) { slideIndex = n; showSlides(); }
+    
     function showSlides() {
         var slides = document.querySelectorAll('.mySlides');
         var dots = document.querySelectorAll('.dot');
         slides.forEach(function(s) { s.style.display = 'none'; });
         dots.forEach(function(d) { d.classList.remove('active-dot'); });
-        if (slides[slideIndex - 1]) slides[slideIndex - 1].style.display = 'flex';
+        
+        if (slides[slideIndex - 1]) slides[slideIndex - 1].style.display = 'block';
         if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add('active-dot');
     }
-    showSlides(); setInterval(function() { plusSlides(1); }, 5000);
+    showSlides(); 
+    setInterval(function() { plusSlides(1); }, 6000);
+
+    // ─── SCHEDULE INTERACTIVE TABS SYSTEM ───
+    function activateScheduleDay(dayNum) {
+        document.querySelectorAll('.schedule-tab-btn').forEach(btn => {
+            if(btn.dataset.day == dayNum) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+        document.querySelectorAll('.day-schedule').forEach(sched => {
+            if(sched.id == 'schedule-day-' + dayNum) sched.classList.add('active');
+            else sched.classList.remove('active');
+        });
+    }
+
+    document.querySelectorAll('.schedule-tab-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            activateScheduleDay(this.dataset.day);
+        });
+    });
+    // Default to current day
+    const currentDayOfWeek = new Date().getDay();
+    activateScheduleDay(currentDayOfWeek);
+
+    // Block Slideshows
     document.addEventListener('DOMContentLoaded', function() {
         var djSlides = document.querySelectorAll('.dj-slide');
         if (djSlides.length > 0) {
             var idx = 0;
-            setInterval(function() { djSlides[idx].classList.remove('active'); idx = (idx + 1) % djSlides.length; djSlides[idx].classList.add('active'); }, 2500);
+            setInterval(function() { 
+                djSlides[idx].classList.remove('active'); 
+                idx = (idx + 1) % djSlides.length; 
+                djSlides[idx].classList.add('active'); 
+            }, 2500);
         }
         var fanSlides = document.querySelectorAll('.fan-slideshow .slide');
         if (fanSlides.length > 0) {
             var fIdx = 0;
-            setInterval(function() { fanSlides[fIdx].classList.remove('active'); fIdx = (fIdx + 1) % fanSlides.length; fanSlides[fIdx].classList.add('active'); }, 3000);
-            fanSlides.forEach(function(s) { s.addEventListener('click', function() { navigateToPage('fanbase'); }); });
+            setInterval(function() { 
+                fanSlides[fIdx].classList.remove('active'); 
+                fIdx = (fIdx + 1) % fanSlides.length; 
+                fanSlides[fIdx].classList.add('active'); 
+            }, 3000);
+            fanSlides.forEach(function(s) { 
+                s.addEventListener('click', function() { navigateToPage('fanbase'); }); 
+            });
         }
     });
+
+    // ─── LIVE STREAM PERSISTENT AUDIO CONTROLLER ───
     const listenBtn = document.getElementById('listenBtn');
     const player = document.getElementById('radioPlayer');
     const volumeControl = document.getElementById('volumeControl');
-    const primaryColor = '#E31937';
-    
+    const floatingPlayer = document.getElementById('floatingPlayer');
+
     function updatePlayerUI(playing) {
         if (playing) {
-            listenBtn.innerHTML = '<i class="fas fa-stop"></i> STOP PLAYING';
-            listenBtn.style.background = '#fff';
-            listenBtn.style.color = primaryColor;
+            listenBtn.innerHTML = '<i class="fas fa-stop"></i>';
+            floatingPlayer.classList.add('playing');
         } else {
-            listenBtn.innerHTML = '<i class="fas fa-play"></i> LISTEN LIVE NOW';
-            listenBtn.style.background = primaryColor;
-            listenBtn.style.color = '#fff';
+            listenBtn.innerHTML = '<i class="fas fa-play"></i>';
+            floatingPlayer.classList.remove('playing');
         }
     }
-    
+
     function togglePlay() {
         if (player.paused) {
             player.play().then(function() {
@@ -560,117 +1368,199 @@
             updatePlayerUI(false);
         }
     }
-    
-    listenBtn.addEventListener('click', function() {
-        togglePlay();
-    });
-    
-    volumeControl.addEventListener('input', function() {
-        player.volume = this.value;
-    });
+
+    listenBtn.addEventListener('click', togglePlay);
+    volumeControl.addEventListener('input', function() { player.volume = this.value; });
     player.volume = 0.7;
-    document.getElementById('shareBtn').addEventListener('click', function() { document.getElementById('shareOptions').classList.toggle('show'); });
+
+    // Wire up hero "Listen Live" button
+    var heroListenBtn = document.getElementById('listenBtnHero');
+    if (heroListenBtn) {
+        heroListenBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            togglePlay();
+        });
+    }
+
+    // Share dropdown handling
+    document.getElementById('shareBtn').addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.getElementById('shareOptions').classList.toggle('show');
+        this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+    });
+
     document.querySelectorAll('.share-option').forEach(function(opt) {
         opt.addEventListener('click', function() {
             var type = this.dataset.type, url = window.location.href, text = 'Check out One Love Radio!';
             if (type === 'facebook') window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
             if (type === 'twitter') window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '_blank');
             if (type === 'whatsapp') window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank');
-            if (type === 'copy') navigator.clipboard.writeText(url).then(function() { alert('Link copied!'); });
+            if (type === 'copy') {
+                navigator.clipboard.writeText(url).then(function() {
+                    alert('Link copied to clipboard!');
+                });
+            }
             document.getElementById('shareOptions').classList.remove('show');
+            document.getElementById('shareBtn').setAttribute('aria-expanded', 'false');
         });
     });
+
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('#shareBtn') && !e.target.closest('#shareOptions')) document.getElementById('shareOptions').classList.remove('show');
+        if (!e.target.closest('#shareBtn') && !e.target.closest('#shareOptions')) {
+            document.getElementById('shareOptions').classList.remove('show');
+            document.getElementById('shareBtn').setAttribute('aria-expanded', 'false');
+        }
     });
+
+    // ─── SUBMIT SONG REQUEST TO WHATSAPP ───
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var msg = 'Song Request\n\nName: ' + document.getElementById('name').value + '\nSong: ' + document.getElementById('title').value + '\nArtist: ' + document.getElementById('artist').value;
-        window.open('https://wa.me/447850930017?text=' + encodeURIComponent(msg), '_blank'); this.reset();
+        window.open('https://wa.me/447850930017?text=' + encodeURIComponent(msg), '_blank');
+        this.reset();
     });
+
+    // ─── EVENTS CALENDAR GENERATOR ───
     (function() {
         var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-        var calendarDate = new Date(); calendarDate.setDate(1);
+        var calendarDate = new Date(); 
+        calendarDate.setDate(1);
+        
         function renderCalendar(date) {
             var year = date.getFullYear(), month = date.getMonth();
             document.getElementById('calendarMonthLabel').textContent = monthNames[month] + ' ' + year;
             var firstDay = new Date(year, month, 1), startDay = firstDay.getDay() - 1;
-            if (startDay < 0) startDay = 6;
+            if (startDay < 0) startDay = 6; // Adjust Sunday
             var daysInMonth = new Date(year, month + 1, 0).getDate(), html = '', day = 1 - startDay;
+            
             for (var row = 0; row < 6; row++) {
                 var tr = '<tr>';
                 for (var col = 0; col < 7; col++) {
                     if (day > 0 && day <= daysInMonth) {
-                        var ec = Math.floor(Math.random() * 10) + 1 + ' Events';
+                        var ec = Math.floor(Math.random() * 4) + 1 + ' Events';
                         tr += '<td><span class="day-number">' + day + '</span><span class="event-count">' + ec + '</span></td>';
-                    } else { tr += '<td></td>'; }
+                    } else { 
+                        tr += '<td></td>'; 
+                    }
                     day++;
                 }
-                tr += '</tr>'; html += tr;
+                tr += '</tr>'; 
+                html += tr;
                 if (day > daysInMonth) break;
             }
             document.getElementById('calendarTableBody').innerHTML = html;
         }
-        document.getElementById('prevMonthBtn').onclick = function() { calendarDate.setMonth(calendarDate.getMonth() - 1); renderCalendar(calendarDate); };
-        document.getElementById('nextMonthBtn').onclick = function() { calendarDate.setMonth(calendarDate.getMonth() + 1); renderCalendar(calendarDate); };
+
+        document.getElementById('prevMonthBtn').onclick = function() { 
+            calendarDate.setMonth(calendarDate.getMonth() - 1); 
+            renderCalendar(calendarDate); 
+        };
+        document.getElementById('nextMonthBtn').onclick = function() { 
+            calendarDate.setMonth(calendarDate.getMonth() + 1); 
+            renderCalendar(calendarDate); 
+        };
         renderCalendar(calendarDate);
+
+        // Submit event to whatsapp
         document.getElementById('eventWhatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
             var fields = ['eventName','eventEmail','eventContact','eventTitle','eventFrom','eventTo','eventStart','eventEnd','eventLocation','eventAddress','eventCity','eventProvince','eventPrice','eventEventContact','eventDescription'];
             var vals = fields.map(function(id) { return document.getElementById(id).value.trim(); });
             var msg = 'New Event Submission\nName: ' + vals[0] + '\nEmail: ' + vals[1] + '\nContact: ' + vals[2] + '\nEvent: ' + vals[3] + '\nFrom: ' + vals[4] + '\nTo: ' + vals[5] + '\nStart: ' + vals[6] + '\nEnd: ' + vals[7] + '\nLocation: ' + vals[8] + '\nAddress: ' + vals[9] + '\nCity: ' + vals[10] + '\nProvince: ' + vals[11] + '\nPrice: ' + vals[12] + '\nContact: ' + vals[13] + '\nDescription: ' + vals[14];
+            
             var number = vals[2].replace(/\D/g, '');
             if (number.startsWith('0')) number = '263' + number.slice(1);
             if (!number.startsWith('263') && !number.startsWith('27') && !number.startsWith('44')) number = '447850930017';
+            
             window.open('https://wa.me/' + number + '?text=' + encodeURIComponent(msg), '_blank');
         });
     })();
+
+    // DJ Application direct WhatsApp submit
     function submitDJApplication(e) {
         e.preventDefault();
         var msg = 'DJ Application\n\nName: ' + document.getElementById('djAppName').value + '\nEmail: ' + document.getElementById('djAppEmail').value + '\nContact: ' + document.getElementById('djAppContact').value + '\nExperience: ' + document.getElementById('djAppExperience').value;
         window.open('https://wa.me/447850930017?text=' + encodeURIComponent(msg), '_blank');
         e.target.reset();
     }
+
+    // ─── SHOPPING CART drawer LOGIC ───
     var cart = JSON.parse(localStorage.getItem('olr_cart') || '[]');
+    
     function addToCart(name, price, btn) {
         var card = btn.closest('.product-card'), customInput = card.querySelector('.custom-text'), custom = customInput ? customInput.value : '';
         cart.push({ name: name, price: price, custom: custom, id: Date.now() });
-        localStorage.setItem('olr_cart', JSON.stringify(cart)); updateCartBanner();
-        btn.textContent = 'Added!'; btn.style.background = '#25D366';
-        setTimeout(function() { btn.textContent = 'Add to Cart'; btn.style.background = ''; }, 1500);
+        localStorage.setItem('olr_cart', JSON.stringify(cart)); 
+        updateCartBanner();
+        
+        btn.textContent = 'Added!'; 
+        btn.style.background = '#25D366';
+        setTimeout(function() { 
+            btn.textContent = 'Add to Cart'; 
+            btn.style.background = ''; 
+        }, 1500);
     }
+
     function updateCartBanner() {
         var banner = document.getElementById('cart-banner');
-        if (cart.length > 0) { banner.style.display = 'block'; document.getElementById('cart-count').textContent = cart.length; document.getElementById('cart-total').textContent = '$' + cart.reduce(function(s,i) { return s + i.price; }, 0).toFixed(2); }
-        else { banner.style.display = 'none'; }
+        if (cart.length > 0) { 
+            banner.style.display = 'block'; 
+            document.getElementById('cart-count').textContent = cart.length; 
+            document.getElementById('cart-total').textContent = '$' + cart.reduce(function(s,i) { return s + i.price; }, 0).toFixed(2); 
+        } else { 
+            banner.style.display = 'none'; 
+        }
     }
+
     function openCartModal() {
-        var list = document.getElementById('cart-items'); list.innerHTML = ''; var total = 0;
+        var list = document.getElementById('cart-items'); 
+        list.innerHTML = ''; 
+        var total = 0;
+        
         cart.forEach(function(item, i) {
             total += item.price;
             var li = document.createElement('li');
             li.innerHTML = '<span>' + item.name + (item.custom ? ' (' + item.custom + ')' : '') + ' - $' + item.price + '</span><button class="remove-item-btn" onclick="removeFromCart(' + i + ')"><i class="fas fa-trash"></i></button>';
             list.appendChild(li);
         });
+        
         document.getElementById('cart-total-display').textContent = 'Total: $' + total.toFixed(2);
         document.getElementById('cart-modal').style.display = 'block';
     }
+
     function closeCartModal() { document.getElementById('cart-modal').style.display = 'none'; }
     function removeFromCart(index) { cart.splice(index, 1); localStorage.setItem('olr_cart', JSON.stringify(cart)); updateCartBanner(); openCartModal(); }
     function openCheckoutModal() { document.getElementById('cart-modal').style.display = 'none'; document.getElementById('checkout-modal').style.display = 'block'; }
     function closeCheckoutModal() { document.getElementById('checkout-modal').style.display = 'none'; }
+    
     function checkoutEmail() {
-        var body = 'Order Details:\n\n'; cart.forEach(function(item) { body += '- ' + item.name + (item.custom ? ' (' + item.custom + ')' : '') + ': $' + item.price + '\n'; });
+        var body = 'Order Details:\n\n'; 
+        cart.forEach(function(item) { 
+            body += '- ' + item.name + (item.custom ? ' (' + item.custom + ')' : '') + ': $' + item.price + '\n'; 
+        });
         body += '\nTotal: $' + cart.reduce(function(s,i) { return s + i.price; }, 0).toFixed(2);
+        
         window.location.href = 'mailto:oneloveradio@gmail.com?subject=' + encodeURIComponent('One Love Radio Order') + '&body=' + encodeURIComponent(body);
-        cart = []; localStorage.removeItem('olr_cart'); updateCartBanner(); closeCheckoutModal();
+        cart = []; 
+        localStorage.removeItem('olr_cart'); 
+        updateCartBanner(); 
+        closeCheckoutModal();
     }
+
     function checkoutWhatsApp() {
-        var msg = 'One Love Radio Order\n\n'; cart.forEach(function(item) { msg += '- ' + item.name + (item.custom ? ' (' + item.custom + ')' : '') + ': $' + item.price + '\n'; });
+        var msg = 'One Love Radio Order\n\n'; 
+        cart.forEach(function(item) { 
+            msg += '- ' + item.name + (item.custom ? ' (' + item.custom + ')' : '') + ': $' + item.price + '\n'; 
+        });
         msg += '\nTotal: $' + cart.reduce(function(s,i) { return s + i.price; }, 0).toFixed(2);
+        
         window.open('https://wa.me/447850930017?text=' + encodeURIComponent(msg), '_blank');
-        cart = []; localStorage.removeItem('olr_cart'); updateCartBanner(); closeCheckoutModal();
+        cart = []; 
+        localStorage.removeItem('olr_cart'); 
+        updateCartBanner(); 
+        closeCheckoutModal();
     }
+
     updateCartBanner();
     </script>
 </body>
