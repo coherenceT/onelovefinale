@@ -62,9 +62,38 @@
         <!-- MAIN CONTENT CONTAINER -->
         <div class="main-content-container">
             
-            <!-- STICKY TOP LIVE BANNER -->
-            <div class="live-banner" role="status" aria-live="polite">
-                🔴 LIVE BROADCAST DAILY FROM 6PM SA TIME
+            <!-- STICKY HEADER PLAYER -->
+            <div class="sticky-player-header" id="stickyPlayerHeader" role="banner" aria-label="Live Stream Player">
+                <div class="sticky-player-content">
+                    <div class="sticky-player-left">
+                        <div class="sticky-player-avatar">
+                            <img id="stickyArtistPhoto" src="images/dj6.jpg" alt="Current DJ">
+                            <div class="sticky-live-dot"></div>
+                        </div>
+                        <div class="sticky-player-info">
+                            <div class="sticky-player-badge"><span class="live-dot"></span> LIVE ON AIR</div>
+                            <p class="sticky-player-dj" id="stickyDjName">Music Interlude</p>
+                            <p class="sticky-player-track" id="stickyTrackTitle">Zimbabwe's Hottest Hits</p>
+                        </div>
+                    </div>
+                    <div class="sticky-player-controls">
+                        <button id="stickyPlayPauseBtn" class="sticky-play-btn" aria-label="Play or pause live stream">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="sticky-volume-wrapper">
+                            <i class="fas fa-volume-down" id="stickyVolDownBtn" title="Mute"></i>
+                            <input type="range" id="stickyVolumeControl" class="sticky-volume-slider" min="0" max="1" step="0.05" value="0.7" aria-label="Volume">
+                            <i class="fas fa-volume-up" id="stickyVolUpBtn" title="Max Volume"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- Restore audio element for background streaming -->
+                <audio id="audioPlayer" preload="auto" crossorigin="anonymous" loop>
+                    <source src="http://altair.streamerr.co:8180/stream" type="audio/mpeg">
+                    <source src="http://altair.streamerr.co:8180/stream" type="audio/aac">
+                    <source src="http://altair.streamerr.co:8180/stream" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
 
             <!-- DYNAMIC MAIN CONTENT VIEWPORTS -->
@@ -72,72 +101,51 @@
                 
                 <!-- HOME PAGE -->
                 <section id="home-page" class="page-section active" aria-labelledby="home-heading">
+                    <!-- HERO WELCOME BANNER -->
                     <div class="hero">
                         <div class="hero-content">
                             <img src="images/onelovelogo.jpeg" alt="One Love Radio Logo" class="hero-logo">
-                            <h2 id="home-heading">Welcome to <span>One Love Radio</span></h2>
-                            <p>Your home for great music and positive vibes. Where passion meets purpose. Music continues playing seamlessly as you explore!</p>
+                            <h2>Welcome to <span>One Love Radio</span></h2>
+                            <p>Zimbabwe's Hottest Hits. Your home for great music and positive vibes. Listen live daily from 6pm SA Time.</p>
                             <div class="hero-cta">
-                                <a href="#" class="cta" id="listenBtnHero"><i class="fas fa-play"></i> Listen Live</a>
-                                <a href="#" class="cta" onclick="navigateToPage('about'); return false;">Discover More</a>
+                                <button class="cta" id="listenBtnHero"><i class="fas fa-headphones"></i> Listen Live</button>
+                                <button class="cta" onclick="navigateToPage('about'); return false;">Discover More</button>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- HERO SLIDESHOW CAROUSEL -->
-                    <div class="slideshow-container" role="region" aria-label="Image slideshow" aria-roledescription="carousel">
-                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 1 of 6">
-                            <img src="images/263hitradioevent.jpg" alt="263 Hit Radio Event">
+
+                    <!-- SLIDESHOW CAROUSEL -->
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <img src="images/djappli.jpg" alt="Live Broadcasting" style="width:100%;">
                             <div class="slide-label">
-                                <h3>263 Hit Radio Event</h3>
-                                <p>Celebrating culture, connection, and pure hits live.</p>
+                                <h3>Live Every Day</h3>
+                                <p>Tune in from 6pm SA Time for the best Zimbabwean hits and international grooves.</p>
                             </div>
                         </div>
-                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 2 of 6">
-                            <img src="images/fusionband.jpg" alt="Band Fusion">
+                        <div class="mySlides fade">
+                            <img src="images/event.jpg" alt="Community Events" style="width:100%;">
+                            <div class="slide-label">
+                                <h3>Community Events</h3>
+                                <p>Join us for live events, meet the DJs, and be part of the One Love family.</p>
+                            </div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="images/263hitradioevent.jpg" alt="Hit Radio Event" style="width:100%;">
+                            <div class="slide-label">
+                                <h3>263 Hit Radio</h3>
+                                <p>Experience the ultimate radio experience with music, culture, and community.</p>
+                            </div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="images/fusionband.jpg" alt="Band Fusion" style="width:100%;">
                             <div class="slide-label">
                                 <h3>Band Fusion Live</h3>
-                                <p>Unforgettable live instrumental and vocal performances.</p>
+                                <p>Where passion meets purpose. incredible live music experiences.</p>
                             </div>
                         </div>
-                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 3 of 6">
-                            <img src="images/streaming.jpg" alt="Live Streaming">
-                            <div class="slide-label">
-                                <h3>Streaming Live</h3>
-                                <p>Broadcasting state-of-the-art audio directly to your device.</p>
-                            </div>
-                        </div>
-                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 4 of 6">
-                            <img src="images/dj1.jpg" alt="DJ 1">
-                            <div class="slide-label">
-                                <h3>DJ Sessions</h3>
-                                <p>Feel the rhythm mixed by the finest sound selectors.</p>
-                            </div>
-                        </div>
-                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 5 of 6">
-                            <img src="images/dj5.jpg" alt="DJ 5">
-                            <div class="slide-label">
-                                <h3>On Air Vibes</h3>
-                                <p>Interactive radio shows that bring people together.</p>
-                            </div>
-                        </div>
-                        <div class="mySlides" role="group" aria-roledescription="slide" aria-label="Slide 6 of 6">
-                            <img src="images/dj3.jpg" alt="DJ 3">
-                            <div class="slide-label">
-                                <h3>Weekend Party</h3>
-                                <p>Your ultimate soundtrack for the weekend crossover.</p>
-                            </div>
-                        </div>
-                        <button class="prev" onclick="plusSlides(-1)" aria-label="Previous slide">&#10094;</button>
-                        <button class="next" onclick="plusSlides(1)" aria-label="Next slide">&#10095;</button>
-                    </div>
-                    <div class="dot-container" role="tablist" aria-label="Slide navigation">
-                        <button class="dot active-dot" onclick="currentSlide(1)" role="tab" aria-label="Go to slide 1"></button>
-                        <button class="dot" onclick="currentSlide(2)" role="tab" aria-label="Go to slide 2"></button>
-                        <button class="dot" onclick="currentSlide(3)" role="tab" aria-label="Go to slide 3"></button>
-                        <button class="dot" onclick="currentSlide(4)" role="tab" aria-label="Go to slide 4"></button>
-                        <button class="dot" onclick="currentSlide(5)" role="tab" aria-label="Go to slide 5"></button>
-                        <button class="dot" onclick="currentSlide(6)" role="tab" aria-label="Go to slide 6"></button>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
 
                     <!-- FEATURE BLOCKS GRID -->
@@ -1138,43 +1146,6 @@
         </div>
     </div>
 
-    <!-- FLOATING PERSISTENT GLASS STREAM PLAYER -->
-    <div class="floating-glass-player" id="floatingPlayer" aria-label="Live Stream Player">
-        <div class="player-header">
-            <div class="player-dj-image">
-                <img id="djMainImage" src="images/dj6.jpg" alt="Current DJ">
-                <div class="live-pulse"></div>
-            </div>
-            <div class="player-info">
-                <div class="player-status-badge"><span class="badge-dot"></span> LIVE NOW</div>
-                <p class="player-dj-name" id="djName">Music Interlude</p>
-                <div class="player-track-name">
-                    <span id="track-title">Zimbabwe's Hottest Hits</span>
-                </div>
-            </div>
-        </div>
-        <div class="player-controls-row">
-            <button id="listenBtn" class="player-play-btn" aria-label="Play live radio stream">
-                <i class="fas fa-play"></i>
-            </button>
-            <div class="player-volume">
-                <i class="fas fa-volume-down" style="color:var(--primary); font-size: 0.85rem;"></i>
-                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0.7" aria-label="Volume">
-                <i class="fas fa-volume-up" style="color:var(--primary); font-size: 0.85rem;"></i>
-            </div>
-            <button class="player-share-btn" id="shareBtn" aria-expanded="false" aria-label="Share options">
-                <i class="fas fa-share-alt"></i>
-            </button>
-        </div>
-        <div class="share-options" id="shareOptions" role="menu" aria-label="Share Options">
-            <button class="share-option" data-type="facebook" role="menuitem"><i class="fab fa-facebook"></i> Facebook</button>
-            <button class="share-option" data-type="twitter" role="menuitem"><i class="fab fa-twitter"></i> Twitter</button>
-            <button class="share-option" data-type="whatsapp" role="menuitem"><i class="fab fa-whatsapp"></i> WhatsApp</button>
-            <button class="share-option" data-type="copy" role="menuitem"><i class="fas fa-copy"></i> Copy Link</button>
-        </div>
-        <audio id="radioPlayer" src="https://vega.streamerr.co/listen/263_hit_radio_/radio.mp3" preload="none"></audio>
-    </div>
-
     <!-- MOBILE BOTTOM APP BAR NAVIGATION -->
     <nav class="mobile-bottom-nav" aria-label="Mobile bottom navigation">
         <a href="#home-page" class="mobile-nav-link active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
@@ -1231,9 +1202,15 @@
     }
 
     function updateDJImage() {
-        const dj = getCurrentDJ(), img = document.getElementById('djMainImage'), dn = document.getElementById('djName');
-        if (img) { img.src = dj.img; img.alt = dj.dj; }
-        if (dn) dn.textContent = dj.dj;
+        const dj = getCurrentDJ();
+        
+        // Sticky Header Player
+        const stickyImg = document.getElementById('stickyArtistPhoto');
+        const stickyDjName = document.getElementById('stickyDjName');
+        const stickyTrackTitle = document.getElementById('stickyTrackTitle');
+        if (stickyImg) { stickyImg.src = dj.img; stickyImg.alt = dj.dj; }
+        if (stickyDjName) stickyDjName.textContent = dj.dj;
+        if (stickyTrackTitle) stickyTrackTitle.textContent = dj.show;
     }
     updateDJImage(); 
     setInterval(updateDJImage, 5*60*1000);
@@ -1271,28 +1248,31 @@
         });
     });
 
-    // ─── SLIDESHOW CAROUSEL SYSTEM ───
-    var slideIndex = 1;
-    function plusSlides(n) {
-        slideIndex += n;
-        var slides = document.querySelectorAll('.mySlides');
-        if (slideIndex > slides.length) slideIndex = 1;
-        if (slideIndex < 1) slideIndex = slides.length;
-        showSlides();
+    // ─── HERO SLIDESHOW CAROUSEL ───
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName('mySlides');
+    const totalSlides = slides ? slides.length : 0;
+
+    function showSlides(n) {
+        if (totalSlides === 0) return;
+        slideIndex = (slideIndex + n) % totalSlides;
+        if (slideIndex < 0) slideIndex = totalSlides - 1;
+        for (let i = 0; i < totalSlides; i++) {
+            slides[i].style.display = 'none';
+        }
+        slides[slideIndex].style.display = 'block';
     }
-    function currentSlide(n) { slideIndex = n; showSlides(); }
-    
-    function showSlides() {
-        var slides = document.querySelectorAll('.mySlides');
-        var dots = document.querySelectorAll('.dot');
-        slides.forEach(function(s) { s.style.display = 'none'; });
-        dots.forEach(function(d) { d.classList.remove('active-dot'); });
-        
-        if (slides[slideIndex - 1]) slides[slideIndex - 1].style.display = 'block';
-        if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add('active-dot');
+
+    window.plusSlides = function(n) {
+        showSlides(n);
+    };
+
+    // Auto-advance slideshow every 6 seconds
+    if (totalSlides > 0) {
+        setInterval(function() {
+            showSlides(1);
+        }, 6000);
     }
-    showSlides(); 
-    setInterval(function() { plusSlides(1); }, 6000);
 
     // ─── SCHEDULE INTERACTIVE TABS SYSTEM ───
     function activateScheduleDay(dayNum) {
@@ -1340,77 +1320,208 @@
         }
     });
 
+    // ─── SUBMIT SONG REQUEST TO WHATSAPP ───
+
     // ─── LIVE STREAM PERSISTENT AUDIO CONTROLLER ───
-    const listenBtn = document.getElementById('listenBtn');
-    const player = document.getElementById('radioPlayer');
-    const volumeControl = document.getElementById('volumeControl');
-    const floatingPlayer = document.getElementById('floatingPlayer');
+    const stickyPlayPauseBtn = document.getElementById('stickyPlayPauseBtn');
+    const listenBtnHero = document.getElementById('listenBtnHero');
+    const stickyVolumeControl = document.getElementById('stickyVolumeControl');
+    const stickyPlayerHeader = document.getElementById('stickyPlayerHeader');
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    // Load persisted state
+    let isPlaying = sessionStorage.getItem('audio_playing') === 'true';
+    let userInitiatedStop = sessionStorage.getItem('audio_stopped') === 'true';
+    let reconnectTimer = null;
+    const STREAM_URL = 'https://altair.streamerr.co/public/263hitradio';
+    const RECONNECT_DELAY = 5000;
 
     function updatePlayerUI(playing) {
+        isPlaying = playing;
+        sessionStorage.setItem('audio_playing', playing);
         if (playing) {
-            listenBtn.innerHTML = '<i class="fas fa-stop"></i>';
-            floatingPlayer.classList.add('playing');
+            stickyPlayerHeader.classList.add('playing');
+            stickyPlayPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
         } else {
-            listenBtn.innerHTML = '<i class="fas fa-play"></i>';
-            floatingPlayer.classList.remove('playing');
+            stickyPlayerHeader.classList.remove('playing');
+            stickyPlayPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
         }
     }
 
     function togglePlay() {
-        if (player.paused) {
-            player.play().then(function() {
-                updatePlayerUI(true);
-            }).catch(function() {
-                updatePlayerUI(false);
-            });
-        } else {
-            player.pause();
-            updatePlayerUI(false);
-        }
-    }
+        if (!audioPlayer) return;
 
-    listenBtn.addEventListener('click', togglePlay);
-    volumeControl.addEventListener('input', function() { player.volume = this.value; });
-    player.volume = 0.7;
-
-    // Wire up hero "Listen Live" button
-    var heroListenBtn = document.getElementById('listenBtnHero');
-    if (heroListenBtn) {
-        heroListenBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            togglePlay();
-        });
-    }
-
-    // Share dropdown handling
-    document.getElementById('shareBtn').addEventListener('click', function(e) {
-        e.stopPropagation();
-        document.getElementById('shareOptions').classList.toggle('show');
-        this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-    });
-
-    document.querySelectorAll('.share-option').forEach(function(opt) {
-        opt.addEventListener('click', function() {
-            var type = this.dataset.type, url = window.location.href, text = 'Check out One Love Radio!';
-            if (type === 'facebook') window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
-            if (type === 'twitter') window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text), '_blank');
-            if (type === 'whatsapp') window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank');
-            if (type === 'copy') {
-                navigator.clipboard.writeText(url).then(function() {
-                    alert('Link copied to clipboard!');
-                });
+        if (isPlaying) {
+            userInitiatedStop = true;
+            sessionStorage.setItem('audio_stopped', 'true');
+            if (reconnectTimer) {
+                clearTimeout(reconnectTimer);
+                reconnectTimer = null;
             }
-            document.getElementById('shareOptions').classList.remove('show');
-            document.getElementById('shareBtn').setAttribute('aria-expanded', 'false');
-        });
-    });
-
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('#shareBtn') && !e.target.closest('#shareOptions')) {
-            document.getElementById('shareOptions').classList.remove('show');
-            document.getElementById('shareBtn').setAttribute('aria-expanded', 'false');
+            audioPlayer.pause();
+            updatePlayerUI(false);
+            return;
         }
-    });
+
+        userInitiatedStop = false;
+        sessionStorage.setItem('audio_stopped', 'false');
+        startPlayback();
+    }
+
+    function startPlayback() {
+        if (!audioPlayer) return;
+
+        stickyPlayPauseBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+        audioPlayer.play().then(function() {
+            updatePlayerUI(true);
+        }).catch(function(error) {
+            console.error('Playback failed:', error);
+            stickyPlayPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
+    }
+
+    // On page load, if it was playing, try to resume
+    if (isPlaying && !userInitiatedStop) {
+        startPlayback();
+    } else {
+        updatePlayerUI(false);
+    }
+
+    function showError(message) {
+        console.error('Player Error:', message);
+        stickyPlayPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        stickyPlayPauseBtn.style.animation = 'shake 0.5s ease';
+        setTimeout(function() {
+            stickyPlayPauseBtn.style.animation = '';
+        }, 500);
+    }
+
+    // Handle stream errors and auto-reconnect
+    function handleStreamError() {
+        console.error('Stream connection lost');
+        if (userInitiatedStop) return;
+        
+        updatePlayerUI(false);
+        stickyPlayPauseBtn.innerHTML = '<i class="fas fa-sync-alt"></i>';
+        
+        // Auto-reconnect after delay
+        if (reconnectTimer) clearTimeout(reconnectTimer);
+        reconnectTimer = setTimeout(function() {
+            console.log('Attempting to reconnect to stream...');
+            if (!userInitiatedStop && audioPlayer) {
+                audioPlayer.load();
+                startPlayback();
+            }
+        }, RECONNECT_DELAY);
+    }
+
+    // Handle stream ended (also triggers reconnect)
+    function handleStreamEnded() {
+        console.log('Stream ended, will reconnect');
+        if (userInitiatedStop) return;
+        handleStreamError();
+    }
+
+    // Attach audio event listeners for resilience
+    if (audioPlayer) {
+        audioPlayer.addEventListener('error', handleStreamError);
+        audioPlayer.addEventListener('ended', handleStreamEnded);
+        audioPlayer.addEventListener('stalled', function() {
+            console.log('Stream stalled, attempting recovery...');
+            if (!userInitiatedStop && !audioPlayer.paused) {
+                // Try to recover by re-loading
+                audioPlayer.load();
+            }
+        });
+        audioPlayer.addEventListener('waiting', function() {
+            console.log('Stream buffering...');
+        });
+        audioPlayer.addEventListener('playing', function() {
+            console.log('Stream is now playing');
+            if (reconnectTimer) {
+                clearTimeout(reconnectTimer);
+                reconnectTimer = null;
+            }
+        });
+    }
+
+    // Volume control
+    if (stickyVolumeControl) {
+        stickyVolumeControl.addEventListener('input', function() {
+            if (audioPlayer) {
+                audioPlayer.volume = this.value;
+            }
+        });
+    }
+
+    // Mute button
+    const stickyVolDownBtn = document.getElementById('stickyVolDownBtn');
+    if (stickyVolDownBtn) {
+        stickyVolDownBtn.addEventListener('click', function() {
+            if (audioPlayer) {
+                audioPlayer.volume = 0;
+                stickyVolumeControl.value = 0;
+            }
+        });
+    }
+
+    // Max volume button
+    const stickyVolUpBtn = document.getElementById('stickyVolUpBtn');
+    if (stickyVolUpBtn) {
+        stickyVolUpBtn.addEventListener('click', function() {
+            if (audioPlayer) {
+                audioPlayer.volume = 1;
+                stickyVolumeControl.value = 1;
+            }
+        });
+    }
+
+    // Add event listeners
+    if (stickyPlayPauseBtn) {
+        stickyPlayPauseBtn.addEventListener('click', togglePlay);
+    }
+    
+    if (listenBtnHero) {
+        listenBtnHero.addEventListener('click', togglePlay);
+    }
+
+    // Initialize volume
+    if (audioPlayer) {
+        audioPlayer.volume = 0.7;
+    }
+
+    // ─── AUTO-PLAY BACKGROUND MUSIC ON PAGE LOAD ───
+    function attemptAutoPlay() {
+        if (!audioPlayer) return;
+
+        // Check if already playing to avoid re-triggering
+        if (!audioPlayer.paused) return;
+
+        console.log('Attempting auto-play of background stream...');
+        audioPlayer.play().then(function() {
+            isPlaying = true;
+            updatePlayerUI(true);
+            console.log('Auto-play successful - background music is playing');
+        }).catch(function(error) {
+            // Auto-play was blocked by browser (user interaction required)
+            console.log('Auto-play blocked by browser. User interaction needed:', error.message);
+        });
+    }
+
+    // Try to auto-play when the page loads
+    // Use DOMContentLoaded to ensure the audio element is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Small delay to let the page render first
+            setTimeout(attemptAutoPlay, 1000);
+        });
+    } else {
+        // DOM already loaded, try after a small delay
+        setTimeout(attemptAutoPlay, 1000);
+    }
+
+    console.log('Player initialized. Stream URL:', STREAM_URL);
 
     // ─── SUBMIT SONG REQUEST TO WHATSAPP ───
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
