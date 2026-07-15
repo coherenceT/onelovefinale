@@ -87,11 +87,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- Restore audio element for background streaming (HTTPS for Netlify compatibility) -->
-                <audio id="audioPlayer" preload="auto" crossorigin="anonymous" loop>
-                    <source src="https://altair.streamerr.co:8180/stream" type="audio/mpeg">
-                    <source src="https://altair.streamerr.co:8180/stream" type="audio/aac">
-                    <source src="https://altair.streamerr.co:8180/stream" type="audio/ogg">
+                <!-- Audio element for streaming (HTTP because the SSL cert on the stream server has expired) -->
+                <audio id="audioPlayer" preload="none" crossorigin="anonymous">
+                    <source src="http://altair.streamerr.co:8180/stream" type="audio/aacp">
+                    <source src="http://altair.streamerr.co:8180/stream" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
@@ -1685,37 +1684,9 @@
         audioPlayer.volume = 0.7;
     }
 
-    // ─── AUTO-PLAY BACKGROUND MUSIC ON PAGE LOAD ───
-    function attemptAutoPlay() {
-        if (!audioPlayer) return;
-
-        // Check if already playing to avoid re-triggering
-        if (!audioPlayer.paused) return;
-
-        console.log('Attempting auto-play of background stream...');
-        audioPlayer.play().then(function() {
-            isPlaying = true;
-            updatePlayerUI(true);
-            console.log('Auto-play successful - background music is playing');
-        }).catch(function(error) {
-            // Auto-play was blocked by browser (user interaction required)
-            console.log('Auto-play blocked by browser. User interaction needed:', error.message);
-        });
-    }
-
-    // Try to auto-play when the page loads
-    // Use DOMContentLoaded to ensure the audio element is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            // Small delay to let the page render first
-            setTimeout(attemptAutoPlay, 1000);
-        });
-    } else {
-        // DOM already loaded, try after a small delay
-        setTimeout(attemptAutoPlay, 1000);
-    }
-
+    // Player is user-initiated only - no auto-play on page load
     console.log('Player initialized. Stream URL:', STREAM_URL);
+    console.log('Click the play button to start streaming.');
 
     // ─── SUBMIT SONG REQUEST TO WHATSAPP ───
     document.getElementById('whatsappForm').addEventListener('submit', function(e) {
