@@ -85,9 +85,9 @@
             top: 0;
             z-index: 1000;
             background: linear-gradient(
-                rgba(0, 0, 0, 0.95), 
+                rgba(0, 0, 0, 0.95),
                 rgba(0, 0, 0, 0.8)
-            ), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+            ), url('images/streamingbakground.jpeg') center/cover no-repeat;
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 30px rgba(255, 0, 38, 0.3);
             border-bottom: 4px solid var(--primary);
@@ -1417,7 +1417,7 @@
 
             <div class="dj-player-section">
                 <div class="dj-image">
-                    <img id="djMainImage" src="images/dj6.jpg" alt="Current DJ">
+                    <img id="djMainImage" src="images/dj7.jpg" alt="Current DJ">
                 </div>
                 <div class="dj-name" id="djName">Music Interlude</div>
                 <div class="player-controls">
@@ -1773,7 +1773,7 @@ setInterval(updateDJImage, 5 * 60 * 1000);
 
     <div class="grid">
     <div class="block">
-        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1170&auto=format&fit=crop"
+        <img src="images/top10.png"
             alt="263 hit Radio Top HITS">
         <div class="block-content">
             <h3>263 hit Radio Radio Top HITS</h3>
@@ -1797,16 +1797,14 @@ setInterval(updateDJImage, 5 * 60 * 1000);
             </div>
         </div>
     </div>
-         <div class="block">
-    <div class="event-slideshow">
-        <img src="images/263 Connection Poster.png" alt="263 Connection Event" class="event-slide active">
+    <div class="block">
+        <img src="images/event.jpg" alt="Upcoming Events">
+        <div class="block-content">
+            <h3>Upcoming Events</h3>
+            <p>Check out the 263 Connection event! Watch the promo video and get involved.</p>
+            <a href="#" class="cta" onclick="navigateToPage('events'); return false;">Go to Events</a>
+        </div>
     </div>
-    <div class="block-content">
-        <h3>Upcoming Events</h3>
-        <p>Check out the 263 Connection event! Watch the promo video and get involved.</p>
-        <a href="#" class="cta" onclick="navigateToPage('events'); return false;">Go to Events</a>
-    </div>
-</div>
 <script>
 document.getElementById('submitSongBtn').addEventListener('click', function(e) {
     e.preventDefault();

@@ -35,7 +35,7 @@
         <aside class="sidebar-nav" aria-label="Desktop sidebar navigation">
             <a href="#home-page" class="sidebar-brand" onclick="navigateToPage('home'); return false;">
                 <img src="images/onelovelogo.jpeg" alt="One Love Radio Logo" class="sidebar-logo">
-                <span class="sidebar-title">One Love</span>
+                            <span class="sidebar-title" style="color: var(--primary);">One Love Radio</span>
             </a>
             <nav class="sidebar-links" role="navigation">
                 <a href="#home-page" class="sidebar-link active" data-page="home"><i class="fas fa-home"></i><span>Home</span></a>
@@ -101,10 +101,14 @@
                 
                 <!-- HOME PAGE -->
                 <section id="home-page" class="page-section active" aria-labelledby="home-heading">
+                    <!-- LOGO BANNER — circular One Love logo in a rounded rectangle card -->
+                    <div class="logo-banner-card">
+                        <img src="images/onelovelogo.jpeg" alt="One Love Radio Logo" class="logo-banner-image">
+                    </div>
+
                     <!-- HERO WELCOME BANNER -->
                     <div class="hero">
                         <div class="hero-content">
-                            <img src="images/onelovelogo.jpeg" alt="One Love Radio Logo" class="hero-logo">
                             <h2>Welcome to <span>One Love Radio</span></h2>
                             <p>Zimbabwe's Hottest Hits. Your home for great music and positive vibes. Listen live daily from 6pm SA Time.</p>
                             <div class="hero-cta">
@@ -151,7 +155,7 @@
                     <!-- FEATURE BLOCKS GRID -->
                     <div class="grid">
                         <div class="block">
-                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1170&auto=format&fit=crop" alt="One Love Radio Top Hits">
+                            <img src="images/top10.png" alt="One Love Radio Top Hits">
                             <div class="block-content">
                                 <h3>One Love Radio Top Hits</h3>
                                 <p>Submit your favorite tracks today and hear them mixed live on air!</p>
@@ -374,7 +378,7 @@
                                     </div>
                                 </div>
                                 <div class="schedule-card">
-                                    <img src="images/dj4.jpg" alt="Dj Greatman" class="schedule-dj-thumb">
+                                    <img src="images/dj Greatman.png" alt="Dj Greatman" class="schedule-dj-thumb">
                                     <div class="schedule-details">
                                         <span class="schedule-time">19:00 - 22:00 SA</span>
                                         <h3 class="schedule-show-name">Drive Time Radio</h3>
@@ -402,7 +406,7 @@
                                     </div>
                                 </div>
                                 <div class="schedule-card">
-                                    <img src="images/dj2.jpg" alt="Dj Lassi" class="schedule-dj-thumb">
+                                    <img src="images/dj7s.jpg" alt="Dj Lassi" class="schedule-dj-thumb">
                                     <div class="schedule-details">
                                         <span class="schedule-time">19:00 - 22:00 SA</span>
                                         <h3 class="schedule-show-name">263 Connection</h3>
@@ -410,7 +414,7 @@
                                     </div>
                                 </div>
                                 <div class="schedule-card">
-                                    <img src="images/dj1.jpg" alt="Dj Black" class="schedule-dj-thumb">
+                                    <img src="images/Dj Black The Supreme.png" alt="Dj Black" class="schedule-dj-thumb">
                                     <div class="schedule-details">
                                         <span class="schedule-time">22:00 - 00:00 SA</span>
                                         <h3 class="schedule-show-name">Revivals Jams</h3>
@@ -458,7 +462,7 @@
                                     </div>
                                 </div>
                                 <div class="schedule-card">
-                                    <img src="images/dj2.jpg" alt="Dj Lassi" class="schedule-dj-thumb">
+                                    <img src="images/dj7s.jpg" alt="Dj Lassi" class="schedule-dj-thumb">
                                     <div class="schedule-details">
                                         <span class="schedule-time">19:00 - 22:00 SA</span>
                                         <h3 class="schedule-show-name">The Rhythm Connect</h3>
@@ -466,7 +470,7 @@
                                     </div>
                                 </div>
                                 <div class="schedule-card">
-                                    <img src="images/dj1.jpg" alt="Dj Black" class="schedule-dj-thumb">
+                                    <img src="images/Dj Black The Supreme.png" alt="Dj Black" class="schedule-dj-thumb">
                                     <div class="schedule-details">
                                         <span class="schedule-time">22:00 - 00:00 SA</span>
                                         <h3 class="schedule-show-name">Lovers Jams</h3>
@@ -508,9 +512,17 @@
                                 <div class="schedule-card">
                                     <img src="images/dj6.jpg" alt="Music Interlude" class="schedule-dj-thumb">
                                     <div class="schedule-details">
-                                        <span class="schedule-time">00:00 - 19:00 SA</span>
+                                        <span class="schedule-time">00:00 - 16:00 SA</span>
                                         <h3 class="schedule-show-name">Auto Play</h3>
                                         <p class="schedule-host">Music Interlude</p>
+                                    </div>
+                                </div>
+                                <div class="schedule-card">
+                                    <img src="images/DJ Thembie.jpeg" alt="DJ Thembie" class="schedule-dj-thumb">
+                                    <div class="schedule-details">
+                                        <span class="schedule-time">16:00 - 19:00 SA</span>
+                                        <h3 class="schedule-show-name">Mutserendende we Ngoma</h3>
+                                        <p class="schedule-host">DJ Thembie okaMpangazitha</p>
                                     </div>
                                 </div>
                                 <div class="schedule-card">
@@ -542,7 +554,7 @@
                                     </div>
                                 </div>
                                 <div class="schedule-card">
-                                    <img src="images/dj3.jpg" alt="Pastor Ibanathi" class="schedule-dj-thumb">
+                                    <img src="images/pastor ibininathi sibanda.png" alt="Pastor Ibanathi" class="schedule-dj-thumb">
                                     <div class="schedule-details">
                                         <span class="schedule-time">19:00 - 20:30 SA</span>
                                         <h3 class="schedule-show-name">Sunday Gospel</h3>
@@ -843,114 +855,266 @@
                     </div>
                 </section>
 
-                <!-- MEET THE DJs PAGE -->
+                <!-- MEET THE DJs PAGE (updated from index2.html) -->
                 <section id="djs-page" class="page-section" aria-labelledby="djs-heading">
                     <div class="glass-card">
-                        <h2 id="djs-heading" class="section-title">Meet Our DJs</h2>
-                        
-                        <!-- PRIME TIME CREW -->
-                        <div class="dj-category-header"><i class="fas fa-star"></i> Prime Time Crew</div>
+                        <h2 id="djs-heading" class="section-title">🌟 Prime Time Crew</h2>
                         <div class="dj-grid">
+                            
                             <div class="dj-card">
-                                <div class="dj-image-container"><img src="images/dj4.jpg" alt="Dj Greatman"></div>
+                                <div class="dj-image-container">
+                                    <img src="images/dj Greatman.png" alt="Dj Greatman" class="dj-image">
+                                </div>
                                 <div class="dj-info">
                                     <h3>Dj Greatman</h3>
-                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Monday 19:00–22:00 SA</div>
-                                    <p>Bringing the energy on Drive Time Radio! Great tunes, great vibes, and the perfect soundtrack for your evening commute.</p>
-                                    <div class="dj-show">"Drive Time Radio"</div>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Monday 19:00–22:00 SA
+                                    </div>
+                                    <p class="dj-bio">Bringing the energy on Drive Time Radio! Great tunes, great vibes, and the perfect soundtrack for your evening commute.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "Drive Time Radio"
+                                    </div>
                                 </div>
                             </div>
+                            
                             <div class="dj-card">
-                                <div class="dj-image-container"><img src="images/dj2.jpg" alt="Bamdiki Munya"></div>
+                                <div class="dj-image-container">
+                                    <img src="images/dj2.jpg" alt="Bamdiki Munya" class="dj-image">
+                                </div>
                                 <div class="dj-info">
                                     <h3>Bamdiki Munya</h3>
-                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Wed &amp; Fri 19:00–22:00 SA</div>
-                                    <p>The people's DJ specializing in urban grooves and classic Zimbabwean hits. Hosts the Midweek Party and Weekend Crossover Show.</p>
-                                    <div class="dj-show">"Midweek Party &amp; Crossover Show"</div>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Wednesday 19:00–22:00 & Friday 19:00–22:00 SA
+                                    </div>
+                                    <p class="dj-bio">The people's DJ specializing in urban grooves and classic Zimbabwean hits. Hosts the Midweek Party and Weekend Crossover Show.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "Midweek Party & The weekend crossover show"
+                                    </div>
                                 </div>
                             </div>
+                            
                             <div class="dj-card">
-                                <div class="dj-image-container"><img src="images/dj2.jpg" alt="Dj Lassi"></div>
+                                <div class="dj-image-container">
+                                    <img src="images/dj7s.jpg" alt="Dj Lassi" class="dj-image">
+                                </div>
                                 <div class="dj-info">
                                     <h3>Dj Lassi</h3>
-                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Tue &amp; Thu 19:00–22:00 SA</div>
-                                    <p>International grooves specialist bringing you the best global sounds. Master of world music fusion and cross-cultural beats.</p>
-                                    <div class="dj-show">"263 Connection &amp; Rhythm Connect"</div>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Tuesday 19:00–22:00 & Thursday 19:00–22:00 SA
+                                    </div>
+                                    <p class="dj-bio">International grooves specialist bringing you the best global sounds. Master of world music fusion and cross-cultural beats.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "263 Connection & The Rhythm Connect"
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="dj-card">
-                                <div class="dj-image-container"><img src="images/dj1.jpg" alt="Dj Black"></div>
+                                <div class="dj-image-container">
+                                    <img src="images/Dj Black The Supreme.png" alt="Dj Black" class="dj-image">
+                                </div>
                                 <div class="dj-info">
                                     <h3>Dj Black</h3>
-                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Tue &amp; Thu 22:00–00:00 SA</div>
-                                    <p>Spinning the best revival jams and lovers' specials. Bringing soul, rhythm, and late-night vibes to the airwaves.</p>
-                                    <div class="dj-show">"Revivals Jams &amp; Lovers Jams"</div>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Tuesday 22:00–00:00 & Thursday 22:00–00:00 SA
+                                    </div>
+                                    <p class="dj-bio">Spinning the best revival jams and lovers' specials. Bringing soul, rhythm, and late-night vibes to the airwaves.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "Revivals jams & Lovers jams"
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- WEEKEND WARRIORS -->
-                        <div class="dj-category-header"><i class="fas fa-music"></i> Weekend Warriors</div>
+                    <div class="glass-card">
+                        <h2 class="section-title">🎶 Weekend Warriors</h2>
                         <div class="dj-grid">
+                            
                             <div class="dj-card">
-                                <div class="dj-image-container"><img src="images/dj5.jpg" alt="Dj Warren"></div>
+                                <div class="dj-image-container">
+                                    <img src="images/DJ Thembie.jpeg" alt="DJ Thembie" class="dj-image">
+                                </div>
+                                <div class="dj-info">
+                                    <h3>DJ Thembie okaMpangazitha</h3>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Saturday 16:00–19:00 SA
+                                    </div>
+                                    <p class="dj-bio">Bringing the heat on Saturday afternoons with Mutserendende we Ngoma and Sounds on Saturday! Get ready for an unforgettable weekend vibe.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "Mutserendende we Ngoma & Sounds on Saturday"
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="dj-card">
+                                <div class="dj-image-container">
+                                    <img src="images/dj5.jpg" alt="Dj Warren" class="dj-image">
+                                </div>
                                 <div class="dj-info">
                                     <h3>Dj Warren</h3>
-                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Mon, Fri 22:00 &amp; Sat 19:00 SA</div>
-                                    <p>The young gun bringing fresh energy and the latest chart-toppers. From Monday Mellow Madness to Friday Night Life and Saturday SOS.</p>
-                                    <div class="dj-show">"Monday Madness, Friday Night Life &amp; SOS"</div>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Monday 22:00–00:00, Friday 22:00–00:00 & Saturday 19:00–22:00 SA
+                                    </div>
+                                    <p class="dj-bio">The young gun bringing fresh energy and the latest chart-toppers. From Monday Mellow Madness to Friday Night Life and Saturday SOS.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "Monday Mellow Madness, Friday Night Life & SOS"
+                                    </div>
                                 </div>
                             </div>
+                            
                             <div class="dj-card">
-                                <div class="dj-image-container"><img src="images/dj3.jpg" alt="Steve Ka Sithole"></div>
+                                <div class="dj-image-container">
+                                    <img src="images/dj3.jpg" alt="Steve Ka Sithole" class="dj-image">
+                                </div>
                                 <div class="dj-info">
                                     <h3>Steve Ka Sithole</h3>
-                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Sat 22:00 &amp; Sun 20:30 SA</div>
-                                    <p>Afrofusion specialist and the master of Bjams. Blending contemporary African beats with global sounds for the perfect weekend wind-down.</p>
-                                    <div class="dj-show">"Bjams"</div>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Saturday 22:00–00:00 & Sunday 20:30–22:00 SA
+                                    </div>
+                                    <p class="dj-bio">Afrofusion specialist and the master of Bjams. Blending contemporary African beats with global sounds for the perfect weekend wind-down.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "Bjams"
+                                    </div>
                                 </div>
                             </div>
+                            
                             <div class="dj-card">
-                                <div class="dj-image-container"><img src="images/dj3.jpg" alt="Pastor Ibanathi"></div>
+                                <div class="dj-image-container">
+                                    <img src="images/pastor ibininathi sibanda.png" alt="Pastor Ibanathi" class="dj-image">
+                                </div>
                                 <div class="dj-info">
                                     <h3>Pastor Ibanathi</h3>
-                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Sunday 19:00–20:30 SA</div>
-                                    <p>Bringing spiritual nourishment and gospel music to end your weekend on a high note. Sunday Gospel with Pastor Ibanathi.</p>
-                                    <div class="dj-show">"Sunday Gospel"</div>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Sunday 19:00–20:30 SA
+                                    </div>
+                                    <p class="dj-bio">Bringing spiritual nourishment and gospel music to end your weekend on a high note. Sunday Gospel with Pastor Ibanathi.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "Sunday Gospel"
+                                    </div>
                                 </div>
                             </div>
+                            
                             <div class="dj-card">
-                                <div class="dj-image-container"><img src="images/dj6.jpg" alt="Music Interlude"></div>
+                                <div class="dj-image-container">
+                                    <img src="images/dj6.jpg" alt="Music Interlude" class="dj-image">
+                                </div>
                                 <div class="dj-info">
                                     <h3>Music Interlude</h3>
-                                    <div class="dj-schedule"><i class="fas fa-clock"></i> Daily 00:00–19:00 SA</div>
-                                    <p>Our intelligent playlist system keeps the music flowing 24/7 with perfect mixes of Zimbabwe's hottest hits.</p>
-                                    <div class="dj-show">"Auto Play — Non-Stop Hits"</div>
+                                    <div class="dj-schedule">
+                                        <i class="fas fa-calendar-day"></i> Daily 00:00–19:00 SA
+                                    </div>
+                                    <p class="dj-bio">Our intelligent playlist system keeps the music flowing 24/7 with perfect mixes of Zimbabwe's hottest hits.</p>
+                                    <div class="show-name">
+                                        <i class="fas fa-microphone"></i> "Auto Play — Non-Stop Hits"
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- STUDIO SUPPORT BADGE -->
-                        <div style="text-align:center; margin-top:40px; padding:20px; background:var(--bg-alt); border-radius:var(--radius-md); border:1px solid var(--border-dark);">
-                            <p style="color:var(--text-secondary); font-size:0.85rem; font-weight:600;"><i class="fas fa-headphones"></i> DJ Booth — Studio Support Available</p>
+                    <div class="glass-card">
+                        <h2 class="section-title">🎤 Want To Join Our Team?</h2>
+                        <div class="join-team">
+                            <div class="join-text">
+                                <h3>DJ Applications Open!</h3>
+                                <p>We're always looking for talented DJs and presenters to join the One Love Radio family. If you've got skills on the decks and a passion for Zimbabwean music, we want to hear from you!</p>
+                                <ul>
+                                    <li>Knowledge of Zimbabwean music genres</li>
+                                    <li>Ability to engage listeners</li>
+                                    <li>Professional attitude</li>
+                                </ul>
+                                <a href="#" class="cta" onclick="navigateToPage('contact'); return false;">View Profiles</a>
+                            </div>
+                            <div class="join-image">
+                                <img src="images/djappli.jpg" alt="DJ Booth">
+                                <div class="image-support">
+                                    <i class="fas fa-headphones"></i>
+                                    <p>Studio Support Available</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- JOIN TEAM -->
-                    <div class="glass-card" style="text-align:center;">
-                        <h2 class="section-title"><i class="fas fa-microphone-alt"></i> Want To Join Our Team?</h2>
-                        <h3 style="color:var(--primary); font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:20px;">DJ Applications Open!</h3>
-                        <p style="color:var(--text-secondary); max-width:600px; margin:0 auto 20px;">We're always looking for talented DJs and presenters to join the One Love Radio family. If you've got skills on the decks and a passion for Zimbabwean music, we want to hear from you!</p>
-                        <ul style="list-style:none; padding:0; margin:0 auto 25px; max-width:400px; text-align:left; display:inline-block;">
-                            <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Knowledge of Zimbabwean music genres</li>
-                            <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Ability to engage listeners</li>
-                            <li style="padding:8px 0; color:var(--text-secondary);"><i class="fas fa-check-circle" style="color:var(--primary); margin-right:10px;"></i> Professional attitude</li>
-                        </ul>
-                        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-                            <button class="cta" onclick="navigateToPage('contact'); return false;"><i class="fas fa-user-plus"></i> View Profiles</button>
-                            <a href="https://chat.whatsapp.com/KnwSpDRRsRG3JqqCPfanB1" class="cta" style="background:transparent; color:var(--primary); border: 2px solid var(--primary); box-shadow:none;" target="_blank"><i class="fab fa-whatsapp"></i> Apply Now</a>
-                        </div>
-                    </div>
+                    <style>
+                        .join-team {
+                            display: flex;
+                            gap: 30px;
+                            align-items: flex-start;
+                        }
+                        
+                        .join-text {
+                            flex: 1;
+                            padding-right: 20px;
+                        }
+                        
+                        .join-image {
+                            width: 250px;
+                            min-width: 250px;
+                            border-radius: 12px;
+                            overflow: hidden;
+                            border: 2px solid var(--primary);
+                            box-shadow: 0 5px 15px rgba(227, 25, 55, 0.2);
+                            position: relative;
+                        }
+                        
+                        .join-image img {
+                            width: 100%;
+                            height: 180px;
+                            object-fit: cover;
+                            object-position: center;
+                            display: block;
+                        }
+                        
+                        .image-support {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+                            padding: 20px 10px 10px;
+                            text-align: center;
+                            color: white;
+                        }
+                        
+                        .image-support i {
+                            font-size: 1.5rem;
+                            color: var(--primary);
+                        }
+                        
+                        .image-support p {
+                            font-size: 0.8rem;
+                            margin-top: 5px;
+                        }
+
+                        .dj-bio {
+                            color: #ddd;
+                            font-size: 0.95rem;
+                            line-height: 1.4;
+                            margin-bottom: 10px;
+                        }
+                        
+                        .show-name {
+                            color: var(--accent-light);
+                            font-style: italic;
+                            margin-top: 6px;
+                            padding: 8px 12px;
+                            border-radius: 10px;
+                            background: rgba(255, 77, 94, 0.06);
+                            border-top: 1px dashed rgba(255,255,255,0.03);
+                            font-size: 0.9rem;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .join-team {
+                                flex-direction: column;
+                            }
+                            .join-image {
+                                width: 100%;
+                                min-width: unset;
+                            }
+                        }
+                    </style>
                 </section>
 
                 <!-- FANBASE PAGE -->
@@ -1181,13 +1345,43 @@
     <script>
     // ─── DJ SCHEDULE DATA ───
     const djSchedule = [
-        [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[20,30],dj:"Pastor Ibanathi",show:"Sunday Gospel",img:"images/dj3.jpg"},{start:[20,30],end:[22,0],dj:"Steve Ka Sithole",show:"Bjams",img:"images/dj3.jpg"},{start:[22,0],end:[24,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"}],
-        [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[22,0],dj:"Dj Greatman",show:"Drive Time Radio",img:"images/dj4.jpg"},{start:[22,0],end:[24,0],dj:"Dj Warren",show:"Monday Mellow Madness",img:"images/dj5.jpg"}],
-        [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[22,0],dj:"Dj Lassi",show:"263 Connection",img:"images/dj2.jpg"},{start:[22,0],end:[24,0],dj:"Dj Black",show:"Revivals Jams",img:"images/dj1.jpg"}],
-        [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[22,0],dj:"Bamdiki Munya",show:"Midweek Party",img:"images/dj2.jpg"},{start:[22,0],end:[24,0],dj:"Guest Dj",show:"Guest Dj",img:"images/dj6.jpg"}],
-        [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[22,0],dj:"Dj Lassi",show:"The Rhythm Connect",img:"images/dj2.jpg"},{start:[22,0],end:[24,0],dj:"Dj Black",show:"Lovers Jams",img:"images/dj1.jpg"}],
-        [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[22,0],dj:"Bamdiki Munya",show:"The Weekend Crossover Show",img:"images/dj2.jpg"},{start:[22,0],end:[24,0],dj:"Dj Warren",show:"Friday Night Life",img:"images/dj5.jpg"}],
-        [{start:[0,0],end:[19,0],dj:"Music Interlude",show:"Auto Play",img:"images/dj6.jpg"},{start:[19,0],end:[22,0],dj:"Dj Warren",show:"SOS",img:"images/dj5.jpg"},{start:[22,0],end:[24,0],dj:"Steve Ka Sithole",show:"Bjams",img:"images/dj3.jpg"}]
+        [ // Sunday (0)
+            { start: [0, 0], end: [19, 0], dj: "Music Interlude", show: "Auto Play", img: "images/dj6.jpg" },
+            { start: [19, 0], end: [20, 30], dj: "Pastor Ibanathi", show: "Sunday Gospel", img: "images/pastor ibininathi sibanda.png" },
+            { start: [20, 30], end: [22, 0], dj: "Steve Ka Sithole", show: "Bjams", img: "images/dj3.jpg" },
+            { start: [22, 0], end: [24, 0], dj: "Music Interlude", show: "Auto Play", img: "images/dj6.jpg" }
+        ],
+        [ // Monday (1)
+            { start: [0, 0], end: [19, 0], dj: "Music Interlude", show: "Auto Play", img: "images/dj6.jpg" },
+            { start: [19, 0], end: [22, 0], dj: "Dj Greatman", show: "Drive Time Radio", img: "images/dj Greatman.png" },
+            { start: [22, 0], end: [24, 0], dj: "Dj Warren", show: "Monday Mellow Madness", img: "images/dj5.jpg" }
+        ],
+        [ // Tuesday (2)
+            { start: [0, 0], end: [19, 0], dj: "Music Interlude", show: "Auto Play", img: "images/dj6.jpg" },
+            { start: [19, 0], end: [22, 0], dj: "Dj Lassi", show: "263 Connection", img: "images/dj7s.jpg" },
+            { start: [22, 0], end: [24, 0], dj: "Dj Black", show: "Revivals jams", img: "images/Dj Black The Supreme.png" }
+        ],
+        [ // Wednesday (3)
+            { start: [0, 0], end: [19, 0], dj: "Music Interlude", show: "Auto Play", img: "images/dj6.jpg" },
+            { start: [19, 0], end: [22, 0], dj: "Bamdiki Munya", show: "Midweek Party", img: "images/dj2.jpg" },
+            { start: [22, 0], end: [24, 0], dj: "Guest Dj", show: "Guest Dj", img: "images/dj6.jpg" }
+        ],
+        [ // Thursday (4)
+            { start: [0, 0], end: [19, 0], dj: "Music Interlude", show: "Auto Play", img: "images/dj6.jpg" },
+            { start: [19, 0], end: [22, 0], dj: "Dj Lassi", show: "The Rhythm Connect", img: "images/dj7s.jpg" },
+            { start: [22, 0], end: [24, 0], dj: "Dj Black", show: "Lovers jams", img: "images/Dj Black The Supreme.png" }
+        ],
+        [ // Friday (5)
+            { start: [0, 0], end: [19, 0], dj: "Music Interlude", show: "Auto Play", img: "images/dj6.jpg" },
+            { start: [19, 0], end: [22, 0], dj: "Bamdiki Munya", show: "The weekend crossover show", img: "images/dj2.jpg" },
+            { start: [22, 0], end: [24, 0], dj: "Dj Warren", show: "Friday Night Life", img: "images/dj5.jpg" }
+        ],
+        [ // Saturday (6)
+            { start: [0, 0], end: [16, 0], dj: "Music Interlude", show: "Auto Play", img: "images/dj6.jpg" },
+            { start: [16, 0], end: [19, 0], dj: "DJ Thembie okaMpangazitha", show: "Mutserendende we Ngoma", img: "images/DJ Thembie.jpeg" },
+            { start: [19, 0], end: [22, 0], dj: "Dj Warren", show: "SOS", img: "images/dj5.jpg" },
+            { start: [22, 0], end: [24, 0], dj: "Steve Ka Sithole", show: "Bjams", img: "images/dj3.jpg" }
+        ]
     ];
     const autoDjPhoto = "images/dj6.jpg";
 
