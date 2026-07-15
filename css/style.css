@@ -50,6 +50,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 body {
@@ -68,6 +70,8 @@ body {
   font-size: 16px;
   overflow-x: hidden;
   position: relative;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Background Grid Lines Overlay */
@@ -86,9 +90,8 @@ body::after {
 /* ─── Accessibility Skip Link ─── */
 .skip-link {
   position: absolute;
-  top: -100%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -9999px;
+  left: -9999px;
   background: var(--primary);
   color: white;
   padding: 12px 24px;
@@ -124,6 +127,8 @@ body::after {
   display: flex;
   min-height: 100vh;
   position: relative;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /* ─── DESKTOP SIDEBAR NAVIGATION ─── */
@@ -261,6 +266,10 @@ body::after {
   flex-direction: column;
   min-width: 0; /* prevents flex blowout */
   padding-bottom: 120px; /* Space for mobile nav / player */
+  position: relative;
+  top: 0;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* ─── STICKY HEADER PLAYER ─── */
@@ -276,6 +285,19 @@ body::after {
   padding: 16px 24px;
   box-sizing: border-box;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 16px;
+}
+
+.sticky-player-header iframe {
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  min-height: 300px;
+  border: none;
 }
 
   .sticky-player-content {
@@ -761,10 +783,10 @@ body::after {
 .logo-banner-image {
   width: 180px;
   height: 180px;
-  border-radius: 50%;
+  border-radius: 20px;
   object-fit: cover;
-  border: 4px solid var(--primary);
-  box-shadow: 0 8px 32px rgba(227, 25, 55, 0.25);
+  border: 4px solid #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(227, 25, 55, 0.3);
   display: block;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -842,16 +864,19 @@ body::after {
 }
 
 .hero-logo {
-  width: 160px;
-  height: 160px;
-  object-fit: contain;
-  margin-bottom: 28px;
-  border-radius: 50%;
-  filter: drop-shadow(0 12px 32px rgba(227, 25, 55, 0.25));
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 4 / 1;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto 32px auto;
+  border-radius: 24px;
+  filter: drop-shadow(0 16px 40px rgba(227, 25, 55, 0.3));
   animation: float 3s ease-in-out infinite;
-  border: 3px solid rgba(227, 25, 55, 0.15);
-  padding: 4px;
-  background: rgba(255,255,255,0.6);
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(227, 25, 55, 0.3);
+  display: block;
 }
 
 @keyframes float {
@@ -931,7 +956,7 @@ body::after {
 .slideshow-container {
   position: relative;
   max-width: 100%;
-  height: 480px;
+  aspect-ratio: 16 / 9;
   margin: 0 auto 40px auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -954,8 +979,8 @@ body::after {
 .mySlides img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  min-height: 480px;
+  object-fit: contain;
+  background: #000;
 }
 
 .slide-label {
@@ -1080,8 +1105,9 @@ body::after {
 .block .fan-slideshow,
 .block .event-slideshow {
   width: 100%;
-  height: 240px;
-  object-fit: cover;
+  height: 320px;
+  object-fit: contain;
+  background: #000;
   border-bottom: 1px solid var(--border-dark);
   position: relative;
   overflow: hidden;
@@ -1191,12 +1217,12 @@ body::after {
 }
 
 .fan-card img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
   object-fit: cover;
-  border: 2px solid var(--primary);
-  box-shadow: var(--shadow-sm);
+  border: 4px solid #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(227, 25, 55, 0.3);
 }
 
 .fan-info h3 {
@@ -1360,7 +1386,8 @@ body::after {
 
 .dj-image-container {
   width: 40%;
-  min-height: 220px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 .dj-image-container img {
@@ -2123,9 +2150,12 @@ footer .socials a:hover {
   }
   .main-content-container {
     margin-left: 240px;
+    padding-top: 0;
+    margin-top: 0;
   }
   #content {
     padding: 30px;
+    margin-top: 0;
   }
   .photo-gallery {
     column-count: 2;
@@ -2141,6 +2171,15 @@ footer .socials a:hover {
   .main-content-container {
     margin-left: 0; /* Content fills viewport width */
     padding-bottom: 140px; /* Extra padding for sticky mobile elements */
+    padding-top: 0;
+    margin-top: 0 !important;
+  }
+  
+  .sticky-player-header {
+    position: sticky !important;
+    top: 0 !important;
+    margin-top: 0 !important;
+    padding: 8px 12px !important;
   }
   
   .mobile-bottom-nav {
@@ -2149,11 +2188,16 @@ footer .socials a:hover {
   
   #content {
     padding: 20px 16px;
+    margin-top: 0;
   }
   
   .glass-card {
     padding: 24px;
     margin-bottom: 24px;
+  }
+  
+  .hero {
+    padding-top: 60px;
   }
   
   .hero h2 {
