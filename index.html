@@ -87,11 +87,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- Restore audio element for background streaming -->
+                <!-- Restore audio element for background streaming (HTTPS for Netlify compatibility) -->
                 <audio id="audioPlayer" preload="auto" crossorigin="anonymous" loop>
-                    <source src="http://altair.streamerr.co:8180/stream" type="audio/mpeg">
-                    <source src="http://altair.streamerr.co:8180/stream" type="audio/aac">
-                    <source src="http://altair.streamerr.co:8180/stream" type="audio/ogg">
+                    <source src="https://altair.streamerr.co:8180/stream" type="audio/mpeg">
+                    <source src="https://altair.streamerr.co:8180/stream" type="audio/aac">
+                    <source src="https://altair.streamerr.co:8180/stream" type="audio/ogg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
