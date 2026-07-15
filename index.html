@@ -1572,7 +1572,7 @@
     let isPlaying = sessionStorage.getItem('audio_playing') === 'true';
     let userInitiatedStop = sessionStorage.getItem('audio_stopped') === 'true';
     let reconnectTimer = null;
-    const STREAM_URL = 'https://altair.streamerr.co/public/263hitradio';
+    const STREAM_URL = 'http://altair.streamerr.co:8180/stream';
     const RECONNECT_DELAY = 5000;
 
     function updatePlayerUI(playing) {
