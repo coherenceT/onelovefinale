@@ -98,18 +98,32 @@
                     <!-- HERO WELCOME BANNER -->
                     <div class="hero">
                         <img src="images/onelovelogo.jpeg" alt="One Love Radio Logo" class="hero-logo">
-                        <div class="hero-content">
-                            <h2>Welcome to <span>One Love Radio</span></h2>
-                            <p>Zimbabwe's Hottest Hits. Your home for great music and positive vibes. Listen live daily from 6pm SA Time.</p>
-                            <div class="hero-cta">
-                                <button class="cta" id="listenBtnHero"><i class="fas fa-headphones"></i> Listen Live</button>
-                                <button class="cta" onclick="navigateToPage('about'); return false;">Discover More</button>
-                            </div>
+                    <div class="hero-content">
+                        <h2>Welcome to <span>One Love Radio</span></h2>
+                        <p>Zimbabwe's Hottest Hits. Your home for great music and positive vibes. Listen live daily from 6pm SA Time.</p>
+                        <div class="hero-cta">
+                            <button class="cta" id="listenBtnHero"><i class="fas fa-headphones"></i> Listen Live</button>
+                            <button class="cta" onclick="navigateToPage('about'); return false;">Discover More</button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Info text with arrows -->
+                    <div class="slideshow-info-section">
+                        <div class="info-item">
+                            <p class="info-label">👇 Slideshow</p>
+                            <p class="info-description">Browse through our latest event posters and show promotions</p>
+                        </div>
+                        <div class="info-item">
+                            <p class="info-label">👇 App Download</p>
+                            <p class="info-description">Get the One Love Radio app for the best listening experience on Android</p>
                         </div>
                     </div>
 
-                    <!-- SLIDESHOW CAROUSEL -->
-                    <div class="slideshow-container">
+                    <!-- SLIDESHOW AND APP PROMO CONTAINER -->
+                    <div class="slideshow-app-container">
+                        <!-- SLIDESHOW CAROUSEL -->
+                        <div class="slideshow-container">
                         <div class="mySlides fade">
                             <img src="images/slideshow_263_connection_event.jpeg" alt="263 Connection Event" style="width:100%;">
                             <div class="slide-label">
@@ -168,6 +182,17 @@
                         </div>
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+
+                    <!-- APP PROMO -->
+                    <div class="app-promo-side">
+                        <img src="images/oneloveapp.jpg" alt="One Love Radio App" class="app-promo-side-image">
+                        <div class="app-promo-side-text">
+                            <h3>Download Our App</h3>
+                            <p>iOS users will see it later</p>
+                        </div>
+                        <button class="cta app-download-btn" onclick="scrollToDownload()">Download</button>
+                    </div>
                     </div>
 
                     <!-- FEATURE BLOCKS GRID -->
@@ -818,9 +843,25 @@
                         <h2 class="section-title">🎧 Altair Stream Player</h2>
                         <p style="color:var(--text-secondary); margin-bottom:25px;">Use the official Altair player for the best streaming experience with full controls.</p>
                         <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:var(--radius-md); border:1px solid var(--border); box-shadow:var(--shadow-md); max-width:640px; margin:0 auto 20px auto;">
-                            <iframe src="https://altair.streamerr.co/stream/263hitradio" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay" title="Altair Stream Player"></iframe>
+                            <iframe src="https://vega.streamerr.co/stationsite/263_hit_radio_" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay" title="Altair Stream Player"></iframe>
                         </div>
-                        <a href="https://altair.streamerr.co/stream/263hitradio" target="_blank" rel="noopener noreferrer" class="cta" style="display:inline-flex; align-items:center; gap:8px;"><i class="fas fa-external-link-alt"></i> Open Fullscreen Player</a>
+                        <a href="https://vega.streamerr.co/stationsite/263_hit_radio_" target="_blank" rel="noopener noreferrer" class="cta" style="display:inline-flex; align-items:center; gap:8px;"><i class="fas fa-external-link-alt"></i> Open Fullscreen Player</a>
+                    </div>
+                    
+                    <div class="download-section" id="download-section">
+                        <h2>📱 Download Our App</h2>
+                        <p>Get the One Love Radio app for the best listening experience on your Android device. Stream live radio, interact with DJs, and stay updated with the latest events.</p>
+                        
+                        <div class="installation-guide">
+                            <video controls playsinline preload="metadata" poster="images/oneloveapp.jpg">
+                                <source src="images/installation-guide-browser.mp4" type="video/mp4">
+                                Your browser does not support video.
+                            </video>
+                        </div>
+                        
+                        <a href="https://onelove.co.uk/downloads/app-debug.apk" class="download-btn-large" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-download"></i> Download App
+                        </a>
                     </div>
                     
                     <div class="glass-card">
@@ -1679,33 +1720,47 @@
     }
 
     // Volume control
-    if (stickyVolumeControl) {
+    if (stickyVolumeControl && audioPlayer) {
+        // Set initial volume (convert string to float)
+        audioPlayer.volume = parseFloat(stickyVolumeControl.value);
+        console.log('Initial volume set:', audioPlayer.volume);
+        
+        // Helper function to update volume
+        function updateVolume(value) {
+            var vol = parseFloat(value);
+            if (isNaN(vol)) vol = 0.7;
+            vol = Math.max(0, Math.min(1, vol)); // Clamp between 0 and 1
+            audioPlayer.volume = vol;
+            console.log('Volume set to:', vol);
+        }
+        
+        // Listen for both input and change events for better compatibility
         stickyVolumeControl.addEventListener('input', function() {
-            if (audioPlayer) {
-                audioPlayer.volume = this.value;
-            }
+            updateVolume(this.value);
+        });
+        
+        stickyVolumeControl.addEventListener('change', function() {
+            updateVolume(this.value);
         });
     }
 
     // Mute button
     const stickyVolDownBtn = document.getElementById('stickyVolDownBtn');
-    if (stickyVolDownBtn) {
+    if (stickyVolDownBtn && audioPlayer && stickyVolumeControl) {
         stickyVolDownBtn.addEventListener('click', function() {
-            if (audioPlayer) {
-                audioPlayer.volume = 0;
-                stickyVolumeControl.value = 0;
-            }
+            stickyVolumeControl.value = 0;
+            audioPlayer.volume = 0;
+            console.log('Muted');
         });
     }
 
     // Max volume button
     const stickyVolUpBtn = document.getElementById('stickyVolUpBtn');
-    if (stickyVolUpBtn) {
+    if (stickyVolUpBtn && audioPlayer && stickyVolumeControl) {
         stickyVolUpBtn.addEventListener('click', function() {
-            if (audioPlayer) {
-                audioPlayer.volume = 1;
-                stickyVolumeControl.value = 1;
-            }
+            stickyVolumeControl.value = 1;
+            audioPlayer.volume = 1;
+            console.log('Max volume');
         });
     }
 
@@ -1718,11 +1773,7 @@
         listenBtnHero.addEventListener('click', togglePlay);
     }
 
-    // Initialize volume
-    if (audioPlayer) {
-        audioPlayer.volume = 0.7;
-    }
-
+    // Note: Initial volume is set in the volume control section above
     // Player is user-initiated only - no auto-play on page load
     console.log('Player initialized. Stream URL:', STREAM_URL);
     console.log('Click the play button to start streaming.');
@@ -1874,6 +1925,23 @@
         localStorage.removeItem('olr_cart'); 
         updateCartBanner(); 
         closeCheckoutModal();
+    }
+
+    function scrollToDownload() {
+        var streamPage = document.getElementById('stream-page');
+        var downloadSection = document.getElementById('download-section');
+        
+        // Navigate to stream page first if not already there
+        if (!streamPage.classList.contains('active')) {
+            navigateToPage('stream');
+        }
+        
+        // Scroll to download section after a short delay
+        setTimeout(function() {
+            if (downloadSection) {
+                downloadSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 300);
     }
 
     updateCartBanner();
