@@ -678,6 +678,24 @@ body::after {
 }
 
 /* ==========================================================================
+   🖼️ EVENT & FAN PHOTO BORDERS
+   ========================================================================== */
+.event-slideshow img,
+.fan-slideshow img,
+.fan-card img {
+  border: 3px solid #000000;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   🖼️ DJ IMAGE BORDERS
+   ========================================================================== */
+.dj-image-container img {
+  border: 3px solid #000000;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
    🧩 MAIN CONTENT SECTIONS
    ========================================================================== */
 #content {
@@ -1326,6 +1344,7 @@ body::after {
   height: 100%;
   object-fit: cover;
   background: #000;
+  display: block;
 }
 
 .slide-label {
@@ -1443,19 +1462,59 @@ body::after {
   transition: all var(--transition);
   display: flex;
   flex-direction: column;
+  height: 420px;
 }
 
-.block img, 
-.block .dj-slideshow, 
-.block .fan-slideshow,
-.block .event-slideshow {
+.block > img {
   width: 100%;
-  height: 320px;
+  height: 200px;
   object-fit: contain;
   background: #000;
   border-bottom: 1px solid var(--border-dark);
   position: relative;
   overflow: hidden;
+}
+
+.block .dj-slideshow {
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid var(--border-dark);
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.block .fan-slideshow,
+.block .event-slideshow {
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid var(--border-dark);
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.block .dj-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  box-sizing: border-box;
+}
+
+.block .fan-slideshow img,
+.block .event-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: none;
+  box-sizing: border-box;
 }
 
 .block:hover {
@@ -1465,25 +1524,30 @@ body::after {
 }
 
 .block-content {
-  padding: 30px;
+  padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .block-content h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: var(--text);
 }
 
 .block-content p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 24px;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
   flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 /* CTA BUTTONS */
@@ -1517,10 +1581,20 @@ body::after {
 }
 
 /* Slide Transition Animations for Block Slideshows */
-.dj-slideshow img, .fan-slideshow img, .event-slideshow img {
+.dj-slideshow img {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fan-slideshow img, .event-slideshow img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
@@ -1657,6 +1731,7 @@ body::after {
   border-radius: var(--radius-sm);
   object-fit: cover;
   border: 1px solid var(--border-dark);
+  flex-shrink: 0;
 }
 
 .schedule-details {
@@ -1738,7 +1813,7 @@ body::after {
 .dj-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   background: #000;
 }
 
@@ -2232,6 +2307,31 @@ form legend {
 }
 
 /* ==========================================================================
+   🖼️ UPCOMING EVENTS & MEET OUR FANS BLOCKS
+   ========================================================================== */
+.upcoming-events-block .event-slideshow,
+.meet-fans-block .fan-slideshow {
+  border: 3px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  background: #000;
+}
+
+.upcoming-events-block .event-slideshow img,
+.meet-fans-block .fan-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: none;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
    📱 MOBILE BOTTOM NAVIGATION BAR
    ========================================================================== */
 .mobile-bottom-nav {
@@ -2577,7 +2677,8 @@ footer .socials a:hover {
   
   .dj-image-container {
     width: 100%;
-    height: 200px;
+    height: 220px;
+    aspect-ratio: auto;
   }
   
   .dj-info {
